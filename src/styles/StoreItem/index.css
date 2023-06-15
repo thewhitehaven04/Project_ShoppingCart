@@ -1,0 +1,28 @@
+.store-item__grid {
+  display: grid;
+  grid-template-columns: 100px 1fr 150px;
+  grid-template-areas:
+    'item_picture item_title controls'
+    'item_picture description controls'
+    'item_picture description .';
+}
+
+.store_item {
+  padding: 10px;
+}
+
+.store-item__title {
+  grid-area: item_title;
+}
+
+.store-item__image {
+  grid-area: item_picture;
+}
+
+.store-item__description {
+  grid-area: description;
+}
+
+.store-item__controls {
+  grid-area: buttons;
+}
