@@ -1,10 +1,13 @@
 .store-item__grid {
   display: grid;
-  grid-template-columns: 100px 1fr 150px;
+  grid-template-columns: 200px 1fr 150px;
   grid-template-areas:
-    'item_picture item_title controls'
+    'item_picture item_title item_price'
+    'item_picture description controls'
     'item_picture description controls'
     'item_picture description .';
+
+  row-gap: 10px;
 }
 
 .store_item {
@@ -13,6 +16,15 @@
 
 .store-item__title {
   grid-area: item_title;
+}
+
+.item_title {
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.store-item__price {
+  grid-area: item_price;
 }
 
 .store-item__image {
@@ -25,4 +37,11 @@
 
 .store-item__controls {
   grid-area: buttons;
+}
+
+.controls__flex {
+  display: flex;
+  flex-flow: column nowrap;
+
+  gap: 5px;
 }

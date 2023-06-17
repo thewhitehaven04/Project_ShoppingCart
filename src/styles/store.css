@@ -1,0 +1,11 @@
+.store-items__collection {
+  display: flex;
+  flex-flow: column nowrap;
+
+  row-gap: 20px;
+  width: max-content; 
+}
+
+.store-items__item {
+  list-style-type: none;
+}
