@@ -7,7 +7,7 @@
     'item_picture description controls'
     'item_picture description .';
 
-  row-gap: 10px;
+  gap: 10px;
 }
 
 .store_item {
@@ -18,13 +18,14 @@
   grid-area: item_title;
 }
 
-.item_title {
+.item-title {
   font-size: 14pt;
   font-weight: bold;
 }
 
 .store-item__price {
   grid-area: item_price;
+  justify-self: flex-end;
 }
 
 .store-item__image {

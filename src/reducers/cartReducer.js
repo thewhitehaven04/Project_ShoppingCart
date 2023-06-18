@@ -6,13 +6,12 @@ export const cartActionTypes = {
   addToCart: 'add',
   removeFromCart: 'remove',
 };
-
 /**
- * @typedef CartItem
- * @property {String} name
- * @property {String} [description]
- * @property {Number} [price]
- * @property {String} [itemPicture]
+ * @typedef CartContextItem
+ * @property {String} id 
+ * @property {String} name 
+ * @property {String} itemPicture 
+ * @property {String} price 
  */
 
 /**
@@ -22,7 +21,7 @@ export const cartActionTypes = {
 /**
  * @typedef {Object} CartAction
  * @property {String} type
- * @property {CartItem} data
+ * @property {CartContextItem} data
  */
 
 /**
@@ -34,8 +33,15 @@ export default function cartReducer(state, action) {
     case cartActionTypes.addToCart:
       return [...state, action.data];
     case cartActionTypes.removeFromCart:
-      return state.filter((cartItem) => cartItem.name !== action.data.name);
+      return state.filter((cartItem) => cartItem.id !== action.data.id);
     default:
       return state;
   }
 }
+
+/**
+ * @module
+ * @exports CartState
+ * @exports CartAction 
+ * @exports CartContextItem 
+ */

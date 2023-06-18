@@ -11,6 +11,7 @@ import { formatPrice } from '../../utils/formatPrice';
 
 /**
  * @typedef {Object} StoreItemProps
+ * @prop {String} id
  * @prop {String} name
  * @prop {String=} description
  * @prop {String=} price
@@ -29,33 +30,29 @@ export default function StoreItem(props) {
   const dispatch = useContext(ShoppingCartDispatchContext);
   const cartItems = useContext(ShoppingCartContext);
 
-  const isItemInCart = () =>
-    Boolean(cartItems.find((cartItem) => cartItem.name === props.name));
+  const isItemInCart = () => cartItems.find((cartItem) => cartItem.id === props.id);
 
-  const handlePurchase = () => {
+  const handlePurchase = () =>
     dispatch({
       type: cartActionTypes.addToCart,
       data: props,
     });
-  };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = () =>
     dispatch({
       type: cartActionTypes.addToCart,
       data: props,
     });
-  };
 
-  const handleRemoveFromCart = () => {
+  const handleRemoveFromCart = () =>
     dispatch({
       type: cartActionTypes.removeFromCart,
       data: props,
     });
-  };
 
   return (
     <article className="store-item__grid store-item">
-      <span className="store-item__title">{props.name}</span>
+      <span className="store-item__title item-title">{props.name}</span>
       <span className="store-item__description">{props.description}</span>
       <span className="store-item__price">{formatPrice(props.price)}</span>
       <img

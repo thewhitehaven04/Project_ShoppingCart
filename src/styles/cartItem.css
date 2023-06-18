@@ -1,0 +1,26 @@
+.cart-item__grid {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-areas:
+    'image title price'
+    'image . controls';
+
+  column-gap: 10px;
+}
+
+.cart-item__image {
+  grid-area: image;
+}
+
+.cart-item__title {
+  grid-area: title;
+}
+
+.cart-item__price {
+  grid-area: price;
+  justify-self: end;
+}
+
+.cart-item__controls {
+  grid-area: controls;
+}

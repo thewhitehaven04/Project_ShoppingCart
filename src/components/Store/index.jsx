@@ -15,7 +15,7 @@ export default function Store(props) {
   return (
     <ul className="store-items__collection">
       {props.items.map((storeItemProps) => (
-        <li className="store-items__item" key={storeItemProps.name}>
+        <li className="store-items__item" key={storeItemProps.id}>
           <StoreItem {...storeItemProps} />
         </li>
       ))}
