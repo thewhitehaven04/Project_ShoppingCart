@@ -20,12 +20,14 @@ jest.mock(
 describe('Displaying item list in store', () => {
   const items = [
     {
+      id: 'lmao',
       name: 'Xbox Series X',
       description: 'kek',
       itemPicture: xsx,
       price: 500,
     },
     {
+      id: 'kek',
       name: 'PlayStation 5',
       description: 'ps5',
       itemPicture: ps5,
