@@ -3,7 +3,8 @@
   flex-flow: column nowrap;
 
   row-gap: 20px;
-  width: max-content; 
+  width: clamp(350px, 90%, 1000px); 
+  padding: 0px;
 }
 
 .store-items__item {

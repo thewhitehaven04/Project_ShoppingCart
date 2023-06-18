@@ -29,26 +29,26 @@ export default function StoreItem(props) {
   const dispatch = useContext(ShoppingCartDispatchContext);
   const cartItems = useContext(ShoppingCartContext);
 
-  const itemIsInCart = () =>
-    cartItems.find((cartItem) => cartItem.name === props.name);
+  const isItemInCart = () =>
+    Boolean(cartItems.find((cartItem) => cartItem.name === props.name));
 
   const handlePurchase = () => {
     dispatch({
-      action: cartActionTypes.addToCart,
+      type: cartActionTypes.addToCart,
       data: props,
     });
   };
 
   const handleAddToCart = () => {
     dispatch({
-      action: cartActionTypes.addToCart,
+      type: cartActionTypes.addToCart,
       data: props,
     });
   };
 
   const handleRemoveFromCart = () => {
     dispatch({
-      action: cartActionTypes.removeFromCart,
+      type: cartActionTypes.removeFromCart,
       data: props,
     });
   };
@@ -61,10 +61,10 @@ export default function StoreItem(props) {
       <img
         className="store-item__image"
         src={props.itemPicture}
-        width="200px"
+        width="150px"
       ></img>
       <div className="store-item__controls controls__flex">
-        {itemIsInCart ? (
+        {isItemInCart() ? (
           <button type="button" onClick={handleRemoveFromCart}>
             Remove from cart
           </button>

@@ -1,5 +1,5 @@
+import { ShoppingCartContext } from 'context/cartContext';
 import React, { useContext } from 'react';
-import { ShoppingCartContext } from '../../context/cartContext';
 import { Link } from 'react-router-dom';
 
 export default function HeaderCartStatus() {

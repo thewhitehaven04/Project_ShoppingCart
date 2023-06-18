@@ -36,12 +36,15 @@
 }
 
 .store-item__controls {
-  grid-area: buttons;
+  grid-area: controls;
 }
 
 .controls__flex {
   display: flex;
   flex-flow: column nowrap;
-
   gap: 5px;
+}
+
+.controls__flex button {
+  width: 100%;
 }

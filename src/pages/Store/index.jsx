@@ -9,7 +9,8 @@ import xsx from './../../resources/images/25647-xbox-series-x-1tb-konzola-cena-p
 const StoreItems = [
   {
     name: 'Xbox Series X',
-    description: 'kek',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi, tempora corrupti harum cum dolore magnam quae, repudiandae deserunt voluptas exercitationem praesentium adipisci ex! Esse voluptatibus perferendis accusantium unde eligendi!',
     itemPicture: xsx,
     price: 500,
     isAddedToCart: false,
@@ -26,7 +27,7 @@ const StoreItems = [
 export default function StorePage() {
   return (
     <main className="store-main">
-      <Store items={StoreItems}></Store>
+      <Store items={StoreItems} />
     </main>
   );
 }

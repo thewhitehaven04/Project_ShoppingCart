@@ -1,7 +1,7 @@
 import React from 'react';
-import StoreItem from '../StoreItem';
 // eslint-disable-next-line no-unused-vars
 import style from './../../styles/store.css';
+import StoreItem from 'components/StoreItem';
 
 /**
  * @typedef {Object} StoreProps
