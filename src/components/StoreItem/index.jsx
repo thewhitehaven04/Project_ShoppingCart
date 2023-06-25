@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import style from './../../styles/storeItem.css';
-import {
-  ShoppingCartContext,
-  ShoppingCartDispatchContext,
-} from '../../context/cartContext';
+import { useShoppingCart, useShoppingCartDispatch } from '../../providers/Cart';
 import { cartActionTypes } from '../../reducers/cartReducer';
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../../utils/formatPrice';
@@ -27,10 +24,11 @@ import { formatPrice } from '../../utils/formatPrice';
  * @param {StoreItemProps} props
  */
 export default function StoreItem(props) {
-  const dispatch = useContext(ShoppingCartDispatchContext);
-  const cartItems = useContext(ShoppingCartContext);
+  const dispatch = useShoppingCartDispatch();
+  const cartItems = useShoppingCart();
 
-  const isItemInCart = () => cartItems.find((cartItem) => cartItem.id === props.id);
+  const isItemInCart = () =>
+    cartItems.find((cartItem) => cartItem.id === props.id);
 
   const handlePurchase = () =>
     dispatch({
@@ -59,7 +57,7 @@ export default function StoreItem(props) {
         className="store-item__image"
         src={props.itemPicture}
         width="150px"
-      ></img>
+      />
       <div className="store-item__controls controls__flex">
         {isItemInCart() ? (
           <button type="button" onClick={handleRemoveFromCart}>

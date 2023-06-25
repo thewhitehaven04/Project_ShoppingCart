@@ -6,8 +6,7 @@
  * @prop {String} price
  */
 
-import { ShoppingCartDispatchContext } from 'context/cartContext';
-import { useContext } from 'react';
+import { useShoppingCartDispatch } from 'providers/Cart';
 import { cartActionTypes } from 'reducers/cartReducer';
 // eslint-disable-next-line no-unused-vars
 import style from './../../styles/cartItem.css';
@@ -15,7 +14,7 @@ import React from 'react';
 
 /** @param {CartItemProps} props */
 export default function CartItem(props) {
-  const dispatch = useContext(ShoppingCartDispatchContext);
+  const dispatch = useShoppingCartDispatch(); 
 
   const removeFromCart = () =>
     dispatch({ type: cartActionTypes.removeFromCart, data: { id: props.id } });

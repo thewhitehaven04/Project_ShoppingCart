@@ -5,7 +5,7 @@ import img from './../../../resources/images/test_img.png';
 import {
   ShoppingCartContext,
   ShoppingCartDispatchContext,
-} from 'context/cartContext';
+} from 'providers/Cart';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 

@@ -1,11 +1,11 @@
 import CartItem from 'components/CartItem';
-import { ShoppingCartContext } from 'context/cartContext';
-import React, { useContext } from 'react';
+import { useShoppingCart } from 'providers/Cart';
+import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import style from './../../styles/cart.css';
 
 export default function Cart() {
-  const cartItems = useContext(ShoppingCartContext);
+  const cartItems = useShoppingCart();
 
   return (
     <ul className="cart-items__collection">

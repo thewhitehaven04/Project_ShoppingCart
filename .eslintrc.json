@@ -13,6 +13,6 @@
   "plugins": ["react", "jest"],
   "rules": {
     "react/prop-types": "off",
-    "react/self-closing-comp": "on"
+    "react/self-closing-comp": 1
   }
 }

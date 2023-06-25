@@ -1,4 +1,4 @@
-import { ShoppingCartDispatchContext } from 'context/cartContext';
+import { ShoppingCartDispatchContext } from 'providers/Cart';
 import CartItem from '..';
 import ip14 from './../../../resources/images/iphone14pro.png';
 import { act, render, screen } from '@testing-library/react';

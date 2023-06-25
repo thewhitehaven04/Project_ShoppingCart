@@ -1,9 +1,9 @@
-import { ShoppingCartContext } from 'context/cartContext';
-import React, { useContext } from 'react';
+import { useShoppingCart } from 'providers/Cart';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function HeaderCartStatus() {
-  const cartItems = useContext(ShoppingCartContext);
+  const cartItems = useShoppingCart();
 
   return (
     <button type="button">
