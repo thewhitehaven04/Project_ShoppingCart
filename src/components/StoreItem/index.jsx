@@ -10,7 +10,7 @@ import { formatPrice } from '../../utils/formatPrice';
  * @prop {String} id
  * @prop {String} name
  * @prop {String=} description
- * @prop {String=} price
+ * @prop {Number=} price
  * @prop {String=} itemPicture
  */
 

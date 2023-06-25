@@ -1,5 +1,5 @@
 /**
- * @typedef ItemExpandedProps
+ * @typedef ItemExpandedData
  * @prop {String} id
  * @prop {String} name
  * @prop {String=} description
@@ -8,19 +8,20 @@
  */
 
 import React from 'react';
+import { useOutletContext, useParams } from 'react-router-dom';
 
-/**
- * @param {ItemExpandedProps} props
- */
-export default function StoreItemExpanded(props) {
-  const { name, description, price } = props;
+export default function StoreItemExpanded() {
+  const { id } = useParams();
+  const item = useOutletContext().find(
+    (item) => item.id === id,
+  );
 
   // Placeholder
   return (
     <>
-      <span>{name}</span>
-      <span>{description}</span>
-      <span>{price}</span>
+      <span>{item.name}</span>
+      <span>{item.description}</span>
+      <span>{item.price}</span>
     </>
   );
 }

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import Store from '../../components/Store';
 import ps5 from './../../resources/images/sony-playstation-ps5-konzola-2.png';
 import xsx from './../../resources/images/25647-xbox-series-x-1tb-konzola-cena-prodaja-2.jpg';
 import ip14 from './../../resources/images/iphone14pro.png';
+import Main from '../../components/Main/index';
+import { Outlet } from 'react-router-dom';
 
 /**
  * @type {import('../../components/StoreItem').StoreItemProps[]}
@@ -34,10 +36,10 @@ const StoreItems = [
   },
 ];
 
-export default function StorePage() {
+export default function StoreContextProvider() {
   return (
     <Main>
-      <Store items={StoreItems} />
+      <Outlet context={StoreItems} />
     </Main>
   );
 }
