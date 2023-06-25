@@ -23,4 +23,5 @@
 
 .cart-item__controls {
   grid-area: controls;
+  justify-self: end;
 }

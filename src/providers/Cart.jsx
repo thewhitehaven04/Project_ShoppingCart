@@ -2,7 +2,9 @@ import { createContext, useContext, useReducer } from 'react';
 import React from 'react';
 import cartReducer from '../reducers/cartReducer';
 
+/** @type React.Context<function(import('../reducers/cartReducer').CartAction): void> */
 export const ShoppingCartDispatchContext = createContext(null);
+/** @type React.Context<import('../reducers/cartReducer').CartContextItem[]> */
 export const ShoppingCartContext = createContext([]);
 
 export default function CartProvider({ children }) {

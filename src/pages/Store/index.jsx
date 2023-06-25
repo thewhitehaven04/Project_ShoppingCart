@@ -5,7 +5,7 @@ import xsx from './../../resources/images/25647-xbox-series-x-1tb-konzola-cena-p
 import ip14 from './../../resources/images/iphone14pro.png';
 
 /**
- * @type {StoreItemProps[]}
+ * @type {import('../../components/StoreItem').StoreItemProps[]}
  */
 const StoreItems = [
   {
@@ -36,8 +36,8 @@ const StoreItems = [
 
 export default function StorePage() {
   return (
-    <main className="store-main">
+    <Main>
       <Store items={StoreItems} />
-    </main>
+    </Main>
   );
 }

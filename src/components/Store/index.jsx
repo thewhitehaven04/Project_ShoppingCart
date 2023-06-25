@@ -1,11 +1,11 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import style from './../../styles/store.css';
 import StoreItem from 'components/StoreItem';
 
+
 /**
  * @typedef {Object} StoreProps
- * @prop {StoreItemProps[]} props
+ * @property {import("./../StoreItem/index.jsx").StoreItemProps[]} items 
  */
 
 /**

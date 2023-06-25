@@ -1,10 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import React from 'react';
-import CartProvider from './providers/Cart';
+import CartProvider from 'providers/Cart';
 import AppHeader from './components/Header';
 import StorePage from './pages/Store';
 import CartPage from 'pages/CartPage';
+import StoreItemExpanded from './components/StoreItemExpanded';
 
 function App() {
   return (

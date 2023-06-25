@@ -13,6 +13,7 @@
   "plugins": ["react", "jest"],
   "rules": {
     "react/prop-types": "off",
-    "react/self-closing-comp": 1
+    "react/self-closing-comp": 1,
+    "no-unused-vars": "off"
   }
 }

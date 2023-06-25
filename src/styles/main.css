@@ -1,0 +1,12 @@
+.main__flex {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.main__dimensions {
+  width: clamp(300px, 60%, 1000px);
+  margin: 0 auto;
+  padding: 0px;
+}

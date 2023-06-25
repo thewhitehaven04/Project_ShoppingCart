@@ -15,7 +15,7 @@ export const cartActionTypes = {
  */
 
 /**
- * @typedef {CartItem[]} CartState
+ * @typedef {CartContextItem[]} CartState
  */
 
 /**

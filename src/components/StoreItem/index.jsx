@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import style from './../../styles/storeItem.css';
 import { useShoppingCart, useShoppingCartDispatch } from '../../providers/Cart';
 import { cartActionTypes } from '../../reducers/cartReducer';
