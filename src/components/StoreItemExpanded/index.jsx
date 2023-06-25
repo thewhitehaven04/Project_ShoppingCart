@@ -8,12 +8,12 @@
  */
 
 import useItem from 'hooks/useItem';
-import React from 'react';
+import React  from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function StoreItemExpanded() {
   const { id } = useParams();
-  const item = useItem(id);
+  const item = useItem(id).get();
 
   // Placeholder
   return (

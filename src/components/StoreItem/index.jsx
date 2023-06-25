@@ -52,11 +52,12 @@ export default function StoreItem(props) {
       <span className="store-item__title item-title">{props.name}</span>
       <span className="store-item__description">{props.description}</span>
       <span className="store-item__price">{formatPrice(props.price)}</span>
-      <img
-        className="store-item__image"
-        src={props.itemPicture}
-        width="150px"
-      />
+      <Link to={props.id} className='store-item__image'>
+        <img
+          src={props.itemPicture}
+          width="150px"
+        />
+      </Link>
       <div className="store-item__controls controls__flex">
         {isItemInCart() ? (
           <button type="button" onClick={handleRemoveFromCart}>

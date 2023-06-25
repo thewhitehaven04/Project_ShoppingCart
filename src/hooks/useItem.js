@@ -6,6 +6,7 @@ import useItemCollection from "./useItemCollection";
 export default function useItem(id) {
   const storage = useItemCollection(); 
 
+  /** @returns {import("components/StoreItemExpanded").ItemExpandedData} */
   const get = () => storage.get(id);
   
   const update = (/** @type {Object} */ itemData) => storage.update(id, itemData); 

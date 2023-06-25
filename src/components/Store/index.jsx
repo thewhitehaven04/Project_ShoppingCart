@@ -17,9 +17,7 @@ export default function Store() {
       <ul className="store-items__collection">
         {items.map((storeItemProps) => (
           <li className="store-items__item" key={storeItemProps.id}>
-            <Link to={storeItemProps.id}>
-              <StoreItem {...storeItemProps} />
-            </Link>
+            <StoreItem {...storeItemProps} />
           </li>
         ))}
       </ul>

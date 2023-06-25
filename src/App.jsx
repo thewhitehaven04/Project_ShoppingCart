@@ -13,9 +13,8 @@ function App() {
       <CartProvider>
         <Routes>
           <Route path="/" element={<AppHeader />}>
-            <Route path="store" element={<StorePage/>}>
-              <Route path=":id" element={<StoreItemExpanded />} />
-            </Route>
+            <Route path="store" element={<StorePage />} />
+            <Route path="store/:id" element={<StoreItemExpanded />} />
             <Route path="cart" element={<CartPage />} />
             <Route index element={<div>Home placeholder</div>} />
           </Route>
