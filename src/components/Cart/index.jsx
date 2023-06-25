@@ -25,7 +25,7 @@ export default function Cart() {
         ))}
       </ul>
       <div className="cart-items__total">
-        <span>{cartItems.length} items in cart</span>
+        <span>Item quantity: {cartItems.length}</span>
         <span>Total: {formatPrice(totalSum())}</span>
       </div>
     </>

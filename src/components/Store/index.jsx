@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './../../styles/store.css';
 import StoreItem from 'components/StoreItem';
-import { Link, Outlet, useOutletContext } from 'react-router-dom';
-import StoreItemExpanded from 'components/StoreItemExpanded';
+import { Link } from 'react-router-dom';
+import useItemCollection from 'hooks/useItemCollection';
 
 /**
  * @typedef {Object} StoreProps
@@ -10,7 +10,7 @@ import StoreItemExpanded from 'components/StoreItemExpanded';
  */
 
 export default function Store() {
-  const items = useOutletContext();
+  const items = useItemCollection().getAll();
 
   return (
     <>

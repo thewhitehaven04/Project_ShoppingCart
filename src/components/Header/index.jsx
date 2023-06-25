@@ -3,7 +3,6 @@ import style from './../../styles/header.css';
 import { Outlet } from 'react-router-dom';
 import HeaderCartStatus from 'components/HeaderCartStatus';
 import { Link } from 'react-router-dom';
-import Breadcrumbs from 'components/Breadcrumbs';
 
 export default function AppHeader() {
   return (
@@ -19,7 +18,6 @@ export default function AppHeader() {
         </nav>
         <HeaderCartStatus />
       </header>
-      <Breadcrumbs />
       <Outlet />
     </>
   );

@@ -5,8 +5,7 @@ import CartProvider from 'providers/Cart';
 import AppHeader from './components/Header';
 import CartPage from 'pages/CartPage';
 import StoreItemExpanded from './components/StoreItemExpanded';
-import StoreContextProvider from './pages/Store';
-import Store from 'components/Store';
+import StorePage from './pages/Store';
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
       <CartProvider>
         <Routes>
           <Route path="/" element={<AppHeader />}>
-            <Route path="store" element={<StoreContextProvider/>}>
-              <Route index element={<Store/>}/>
+            <Route path="store" element={<StorePage/>}>
               <Route path=":id" element={<StoreItemExpanded />} />
             </Route>
             <Route path="cart" element={<CartPage />} />

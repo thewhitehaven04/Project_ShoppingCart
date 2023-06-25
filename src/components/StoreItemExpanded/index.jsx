@@ -7,14 +7,13 @@
  * @prop {String[]=} itemPicture
  */
 
+import useItem from 'hooks/useItem';
 import React from 'react';
-import { useOutletContext, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 export default function StoreItemExpanded() {
   const { id } = useParams();
-  const item = useOutletContext().find(
-    (item) => item.id === id,
-  );
+  const item = useItem(id);
 
   // Placeholder
   return (
