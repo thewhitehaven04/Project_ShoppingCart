@@ -3,7 +3,7 @@
  * @prop {String} id
  * @prop {String} name
  * @prop {String} itemPicture
- * @prop {String} price
+ * @prop {Number} price
  */
 
 import { useShoppingCartDispatch } from 'providers/Cart';

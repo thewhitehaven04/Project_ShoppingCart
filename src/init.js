@@ -1,7 +1,7 @@
 import ps5 from './resources/images/sony-playstation-ps5-konzola-2.png';
 import xsx from './resources/images/25647-xbox-series-x-1tb-konzola-cena-prodaja-2.jpg';
 import ip14 from './resources/images/iphone14pro.png';
-import useLocalStorage from 'hooks/useLocalStorage';
+import useLocalStorage from 'service/localStorage';
 export default function initializeItems() {
   const storage = useLocalStorage('items');
   if (Object.keys(storage.getAll()).length === 0) {

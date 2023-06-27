@@ -7,26 +7,22 @@ import { formatPrice } from 'utils/formatPrice';
 export default function Cart() {
   const cartItems = useShoppingCart();
 
-  const totalSum = () =>
-    cartItems.reduce((sum, item) => {
-      sum += item.price;
-      return sum;
-    }, 0);
+  const totalSum = cartItems.reduce((sum, item) => sum + item.price, 0);
 
   return cartItems.length === 0 ? (
     <span>There are no items in your cart</span>
   ) : (
     <>
       <ul className="cart-items__collection">
-        {cartItems.map((cartItem) => (
-          <li key={cartItem.prop}>
+        {cartItems.map((cartItem, index) => (
+          <li key={index}>
             <CartItem {...cartItem} />
           </li>
         ))}
       </ul>
       <div className="cart-items__total">
         <span>Item quantity: {cartItems.length}</span>
-        <span>Total: {formatPrice(totalSum())}</span>
+        <span>Total: {formatPrice(totalSum)}</span>
       </div>
     </>
   );

@@ -7,14 +7,11 @@
  * @prop {String[]=} itemPicture
  */
 
-import useItem from 'hooks/useItem';
-import React  from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 export default function StoreItemExpanded() {
-  const { id } = useParams();
-  const item = useItem(id).get();
-
+  const item = useLoaderData();
   // Placeholder
   return (
     <>

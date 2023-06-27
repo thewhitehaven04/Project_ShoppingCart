@@ -1,9 +1,7 @@
-import { useEffect } from 'react';
-
 /**
  * @param {String} collectionName
  */
-export default function useLocalStorage(collectionName) {
+export default function localStorageWrapper(collectionName) {
   if (!localStorage.getItem(collectionName)) {
     localStorage.setItem(collectionName, JSON.stringify({}));
   }
@@ -16,7 +14,7 @@ export default function useLocalStorage(collectionName) {
     const collection = JSON.parse(localStorage.getItem(collectionName));
     if (collection[key] !== undefined) {
       throw new ReferenceError(
-        'Element with given key is already present in the collection',
+        'Record with given key is already present in the collection',
       );
     }
 

@@ -1,8 +1,7 @@
 import React from 'react';
 import style from './../../styles/store.css';
 import StoreItem from 'components/StoreItem';
-import { Link } from 'react-router-dom';
-import useItemCollection from 'hooks/useItemCollection';
+import localStorageWrapper from 'service/localStorage';
 
 /**
  * @typedef {Object} StoreProps
@@ -10,7 +9,7 @@ import useItemCollection from 'hooks/useItemCollection';
  */
 
 export default function Store() {
-  const items = useItemCollection().getAll();
+  const items = localStorageWrapper('items').getAll();
 
   return (
     <>

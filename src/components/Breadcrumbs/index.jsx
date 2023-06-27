@@ -1,41 +1,23 @@
-import { createContext, useState } from 'react';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useMatches } from 'react-router-dom';
+import style from './../../styles/breadcrumbs.css';
 
-/**
- * @typedef {Object} BreadcrumbSegment
- * @property {String} segmentHref
- * @property {String} breadcrumbLabel
- */
+export default function Breadcrumbs() {
+  const matches = useMatches();
 
-const BreadcrumbsContext = createContext(null);
-
-export default function Breadcrumbs({ children }) {
-  const [segments, setSegments] = useState([]);
-  /** @type BreadcrumbSegment[] */
-  let lastAdded;
-
-
-  /**
-   * @param {BreadcrumbSegment[]} segments
-   */
-  const pushSegmentsToBreadcrumbs = (segments) => {
-    setSegments([...breadcrumbs, ...segments]);
-    lastAdded = segments;
-  };
-
-  const popSegment = () => {
-    setSegments(breadcrumbs.slice(0, -lastAdded.length));
-  };
+  const matchesWithCrumbs = matches.filter((match) => match.handle);
 
   return (
-    <BreadcrumbsContext.Provider
-      value={[pushSegmentsToBreadcrumbs, popSegment]}
-    >
-      {breadcrumbs.map((segment) => (
-        <NavLink key={segment.breadcrumbLabel} to={'/' + segment.segmentHref} />
-      ))}
-      {children}
-    </BreadcrumbsContext.Provider>
+    <nav>
+      <ul className="crumbs__flex">
+        {matchesWithCrumbs.map((match, index) => (
+          <li key={index}>
+            <NavLink to={match.pathname} end>
+              {match.handle.crumb(match.data)}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }

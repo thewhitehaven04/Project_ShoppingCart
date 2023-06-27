@@ -11,7 +11,7 @@ export const cartActionTypes = {
  * @property {String} id 
  * @property {String} name 
  * @property {String} itemPicture 
- * @property {String} price 
+ * @property {Number} price 
  */
 
 /**
