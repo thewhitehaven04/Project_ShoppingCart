@@ -61,9 +61,11 @@ describe('Static store item fields', () => {
     );
 
     const user = userEvent.setup();
-    await user.click(screen.queryByRole('button', { name: 'Purchase' }));
+    await act(async () => {
+      await user.click(screen.queryByRole('link', { name: 'Purchase' }));
+    });
 
-    expect(await screen.findByText('cart')).toBeTruthy();
+    expect(await screen.findByText('cart')).toBeInTheDocument();
   });
 
   test("Click on 'add to new cart' changes the button to 'remove from cart'", async () => {
@@ -84,16 +86,10 @@ describe('Static store item fields', () => {
     );
 
     const user = userEvent.setup();
-    await act(async () => {
-      await user.click(screen.getByRole('button', { name: 'Add to cart' }));
-    });
+    await user.click(screen.getByRole('button', { name: 'Add to cart' }));
     expect(await screen.findByText('Remove from cart')).toBeInTheDocument();
 
-    await act(async () => {
-      await user.click(
-        screen.getByRole('button', { name: 'Remove from cart' }),
-      );
-    });
+    await user.click(screen.getByRole('button', { name: 'Remove from cart' }));
     expect(await screen.findByText('Add to cart')).toBeInTheDocument();
   });
 });
