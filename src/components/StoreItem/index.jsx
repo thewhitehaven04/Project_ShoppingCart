@@ -26,8 +26,7 @@ export default function StoreItem(props) {
   const dispatch = useShoppingCartDispatch();
   const cartItems = useShoppingCart();
 
-  const isItemInCart = () =>
-    cartItems.find((cartItem) => cartItem.id === props.id);
+  const isItemInCart = cartItems.find((cartItem) => cartItem.id === props.id);
 
   const handlePurchase = () =>
     dispatch({
@@ -56,7 +55,7 @@ export default function StoreItem(props) {
         <img src={props.itemPicture} width="150px" />
       </Link>
       <div className="store-item__controls controls__flex">
-        {isItemInCart() ? (
+        {isItemInCart ? (
           <button type="button" onClick={handleRemoveFromCart}>
             Remove from cart
           </button>

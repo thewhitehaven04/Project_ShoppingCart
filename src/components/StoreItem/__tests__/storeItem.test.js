@@ -1,13 +1,18 @@
 import { act, render, screen } from '@testing-library/react';
 import StoreItem from '..';
-import React from 'react';
+import React  from 'react';
 import img from './../../../resources/images/test_img.png';
+import CartProvider from 'providers/Cart';
 import {
-  ShoppingCartContext,
-  ShoppingCartDispatchContext,
-} from 'providers/Cart';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+  Route,
+  RouterProvider,
+  createMemoryRouter,
+  createRoutesFromElements,
+} from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import { formatPrice } from 'utils/formatPrice';
+import '@testing-library/jest-dom';
+
 
 const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi, tempora corrupti harum cum dolore magnam quae, repudiandae deserunt voluptas exercitationem praesentium adipisci ex! Esse voluptatibus perferendis accusantium unde eligendi!';
@@ -20,75 +25,75 @@ const item = {
 };
 
 describe('Static store item fields', () => {
-  const dispatchMock = jest.fn(() => console.log());
-  const RouterMock = ({ children }) => (
-    <MemoryRouter initialEntries={['/store']}>
-      <Routes>
-        <Route path="/" element={<span>Hello</span>} />
-        <Route path="/store" element={children[0]} />
-        <Route path="/cart" element={<span>cart placeholder</span>} />
-      </Routes>
-    </MemoryRouter>
+  const router = createMemoryRouter(
+    createRoutesFromElements(
+      <Route path="/store" element={<StoreItem {...item} />} />,
+    ),
+    { initialEntries: ['/store'], initialIndex: 1 },
   );
+
   test("Item's name, description and price are displayed", () => {
     render(
-      <RouterMock>
-        <ShoppingCartDispatchContext.Provider value={dispatchMock}>
-          <ShoppingCartContext.Provider value={[]}>
-            <StoreItem {...item} />
-          </ShoppingCartContext.Provider>
-        </ShoppingCartDispatchContext.Provider>
-      </RouterMock>,
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>,
     );
 
     expect(screen.findByText(item.name)).toBeTruthy();
-    expect(screen.findByText(item.price)).toBeTruthy();
+    expect(screen.findByText(formatPrice(item.price))).toBeTruthy();
     expect(screen.findByText(item.description)).toBeTruthy();
   });
 
   test('Click on purchase redirects to cart', async () => {
-    render(
-      <RouterMock>
-        <ShoppingCartDispatchContext.Provider value={dispatchMock}>
-          <ShoppingCartContext.Provider value={[]}>
-            <StoreItem {...item} />
-          </ShoppingCartContext.Provider>
-        </ShoppingCartDispatchContext.Provider>
-      </RouterMock>,
+    const router = createMemoryRouter(
+      createRoutesFromElements(
+        <>
+          <Route path="/store" element={<StoreItem {...item} />} />,
+          <Route path="/cart" element={<div>cart</div>} />,
+        </>,
+      ),
+      { initialEntries: ['/store'], initialIndex: 1 },
     );
-
-    act(() => {
-      const user = userEvent.setup();
-      user.click(screen.findByRole('link', { textContent: 'Purchase' }));
-    });
-
-    expect(await screen.findByText('cart placeholder')).toBeTruthy();
-  });
-
-  test("Click on 'add to new cart' changes the button to 'remove from cart'", async () => {
     render(
-      <RouterMock>
-        <ShoppingCartDispatchContext.Provider value={dispatchMock}>
-          <ShoppingCartContext.Provider value={[]}>
-            <StoreItem {...item} />
-          </ShoppingCartContext.Provider>
-        </ShoppingCartDispatchContext.Provider>
-      </RouterMock>,
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>,
     );
 
     const user = userEvent.setup();
-    await user.click(
-      screen.queryByRole('button', { textContent: 'Add to cart' }),
-    );
-    expect(
-      screen.queryAllByRole('button', { textContent: 'Remove from cart' }),
-    ).toBeTruthy();
+    await user.click(screen.queryByRole('button', { name: 'Purchase' }));
 
-    await user.click(
-      screen.queryByRole('button', { textContent: 'Remove from cart' }),
+    expect(await screen.findByText('cart')).toBeTruthy();
+  });
+
+  test("Click on 'add to new cart' changes the button to 'remove from cart'", async () => {
+    const router = createMemoryRouter(
+      createRoutesFromElements(
+        <>
+          <Route path="/store" element={<StoreItem {...item} />} />,
+          <Route path="/cart" element={<div>cart</div>} />,
+        </>,
+      ),
+      { initialEntries: ['/store'], initialIndex: 1 },
     );
-    expect(
-      screen.queryAllByRole('button', { textContent: 'Add to cart' }),
-    ).toBeTruthy();
+
+    render(
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>,
+    );
+
+    const user = userEvent.setup();
+    await act(async () => {
+      await user.click(screen.getByRole('button', { name: 'Add to cart' }));
+    });
+    expect(await screen.findByText('Remove from cart')).toBeInTheDocument();
+
+    await act(async () => {
+      await user.click(
+        screen.getByRole('button', { name: 'Remove from cart' }),
+      );
+    });
+    expect(await screen.findByText('Add to cart')).toBeInTheDocument();
   });
 });
