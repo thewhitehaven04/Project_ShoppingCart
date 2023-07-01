@@ -1,21 +1,40 @@
 import React from 'react';
 import style from './../../styles/header.css';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link, useMatches } from 'react-router-dom';
 import HeaderCartStatus from 'components/HeaderCartStatus';
-import { Link } from 'react-router-dom';
 import Breadcrumbs from 'components/Breadcrumbs';
 
+/**
+ * @param {React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>} props
+ */
+export function HeaderButton({ children }, props) {
+  return (
+    <button
+      {...props}
+      className={'header-button' + (props.className ? props.className : '')}
+    >
+      {children}
+    </button>
+  );
+}
+
 export default function AppHeader() {
+  const inStore = useMatches().find((match) =>
+    match.pathname.includes('store'),
+  );
+
   return (
     <>
       <header className="header__flex header__sticky">
         <nav className="header_navigation">
-          <button type="button">
+          <HeaderButton type="button">
             <Link to="/">Home</Link>
-          </button>
-          <button type="button">
-            <Link to="/store">Back to store</Link>
-          </button>
+          </HeaderButton>
+          {!inStore && (
+            <HeaderButton type="button">
+              <Link to="/store">Store</Link>
+            </HeaderButton>
+          )}
         </nav>
         <HeaderCartStatus />
       </header>

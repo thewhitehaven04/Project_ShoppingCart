@@ -1,11 +1,47 @@
 .header__flex {
+
+  --gray: rgba(243, 243, 243, 0.931);
+
   display: flex;
   flex-flow: row nowrap;
 
   justify-content: space-between;
+  gap: 10px;
+
+  background-color: var(--gray); 
+  padding: 15px 10px;
+
+  box-shadow: 0px 3px 24px 3px white; 
+  backdrop-filter: blur(4px);
 }
 
 .header__sticky {
   position: sticky;
   top: 0px;
+}
+
+.header-button {
+  --purple: rgb(71, 25, 107);
+  appearance: none;
+
+  color: var(--purple);
+  background-color: white;
+
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid var(--purple);
+}
+
+.header-button:hover {
+  color: white;
+  background-color: var(--purple);
+  border-color: white;
+  cursor: pointer;
+}
+
+.header_navigation {
+  display: flex;
+  flex-flow: row nowrap; 
+
+  gap: 10px;
 }

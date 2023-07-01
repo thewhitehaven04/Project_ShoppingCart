@@ -21,7 +21,6 @@
 
 .item-expanded_description {
   grid-area: description;
-  padding: 10px;
   text-align: justify;
   text-justify: distribute;
 }
