@@ -1,6 +1,7 @@
 import AppHeader from 'components/Header';
 import StoreItemExpanded from 'components/StoreItemExpanded';
-import CartPage from 'pages/CartPage';
+import CartPage from 'pages/Cart';
+import HomePage from 'pages/Home';
 import StorePage from 'pages/Store';
 import React from 'react';
 import {
@@ -14,7 +15,11 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<AppHeader />} handle={{ crumb: () => 'Home' }}>
       <Route path="store" handle={{ crumb: () => 'Store' }}>
-        <Route index element={<StorePage />} />
+        <Route
+          index
+          element={<StorePage />}
+          loader={() => localStorageWrapper('items').getAll()}
+        />
         <Route
           path=":id"
           element={<StoreItemExpanded />}
@@ -27,7 +32,11 @@ const router = createBrowserRouter(
         element={<CartPage />}
         handle={{ crumb: () => 'Shopping Cart' }}
       />
-      <Route index element={<div>Home placeholder</div>} />
+      <Route
+        index
+        element={<HomePage />}
+        loader={() => localStorageWrapper('featuredItems').getAll()}
+      />
     </Route>,
   ),
 );

@@ -1,0 +1,9 @@
+.featured-items__flex {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 10px;
+  list-style-type: none;
+}
