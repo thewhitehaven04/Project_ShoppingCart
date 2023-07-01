@@ -16,7 +16,7 @@ const storeItems = [
     id: crypto.randomUUID().toString(),
     name: 'Xbox Series X',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi, tempora corrupti harum cum dolore magnam quae, repudiandae deserunt voluptas exercitationem praesentium adipisci ex! Esse voluptatibus perferendis accusantium unde eligendi!',
+      'Xbox Series X will be our fastest, most powerful console ever and set a new bar for performance, speed and compatibility, allowing you to bring your gaming legacy, thousands of games from three generations and more forward with you.',
     itemPicture: xsx,
     price: 499.99,
   },
@@ -60,13 +60,14 @@ const featuredItems = [
     name: 'OnePlus 11',
     promoDescription:
       'The OnePlus 11 5G flagship combines power with effortless elegance. Driven by the most extreme hardware in OnePlus history, dial every possibility up to 11. The OnePlus 11 5G is the Shape of Power. ',
-    imagePath: op11featured,
+    imagePath: op11,
   },
   {
     id: zf4ID,
     name: 'Samsung Galaxy Z Fold 4',
-    promoDescription: 'Stands out. Stands up. Unfolds',
-    imagePath: zf4featured,
+    promoDescription:
+      "From feasibility to refinement, the natural evolution of Samsung's priorities for its flagship foldable smartphone took just a couple of years. The Galaxy Z Fold4 of 2022 focuses on much-needed camera upgrades, and throws in some subtle physical polishing, all the while maintaining the core concept of the productivity-driven phone-turns-tablet form factor.",
+    imagePath: zf4,
   },
 ];
 

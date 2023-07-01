@@ -20,17 +20,13 @@ import { Link } from 'react-router-dom';
 export default function FeaturedItem(props) {
   return (
     <Link to={`/store/${props.id}`}>
-      <article className="featured-item__flex featured-item">
-        <img
-          src={props.imagePath}
-          alt={props.name}
-          className="featured-item_image"
-        />
-        <div className="featured-item_text">
-          <div className="featured-item_text__name">{props.name}</div>
-          <div className="featured-item_text__description">
-            {props.promoDescription}
-          </div>
+      <article className="featured-item__grid">
+        <div className="featured-item_image">
+          <img src={props.imagePath} />
+        </div>
+        <div className="featured-item_name">{props.name}</div>
+        <div className="featured-item_description">
+          {props.promoDescription}
         </div>
       </article>
     </Link>
