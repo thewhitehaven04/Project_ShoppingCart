@@ -7,9 +7,12 @@ import op11featured from './resources/images/promo/OnePlus-11_review_1-2.webp';
 import zf4featured from './resources/images/promo/2_053_ecosystyem_galaxy_zfold4_beige_spen_zflip4_pinkgold_HI_copy.jpg';
 
 import localStorageWrapper from 'service/localStorage';
+import { Supply } from 'components/StoreItem/types';
 
 const op11ID = crypto.randomUUID().toString();
 const zf4ID = crypto.randomUUID().toString();
+
+/** @type import('components/StoreItemExpanded').ItemExpandedData[] */
 
 const storeItems = [
   {
@@ -18,6 +21,7 @@ const storeItems = [
     description:
       'Xbox Series X will be our fastest, most powerful console ever and set a new bar for performance, speed and compatibility, allowing you to bring your gaming legacy, thousands of games from three generations and more forward with you.',
     itemPicture: xsx,
+    supply: Supply.MEDIUM,
     price: 499.99,
   },
   {
@@ -26,6 +30,7 @@ const storeItems = [
     description:
       'Experience lightning-fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback1, adaptive triggers1 and 3D Audio*, and an all-new generation of incredible PlayStation games.',
     itemPicture: ps5,
+    supply: Supply.MEDIUM,
     price: 499.99,
   },
   {
@@ -34,6 +39,7 @@ const storeItems = [
     description:
       'The iPhone 14 Pro and iPhone 14 Pro Max are smartphones designed, developed, and marketed by Apple Inc. They are the sixteenth-generation flagship iPhones, succeeding the iPhone 13 Pro and iPhone 13 Pro Max. The devices were unveiled alongside the iPhone 14 and iPhone 14 Plus during the Apple Event at Apple Park in Cupertino, California, on September 7, 2022',
     itemPicture: ip14,
+    supply: Supply.HIGH,
     price: 999.99,
   },
   {
@@ -42,6 +48,7 @@ const storeItems = [
     itemPicture: op11,
     description:
       "OnePlus 11 combines excellent specs, incredible battery life, and a competent camera system all for just $700. While some enthusiasts might miss out on the fast wireless charging from last year's OnePlus 10 Pro — and OxygenOS 13 remains a shell of its former self — this is a big step in the right direction for the company.",
+    supply: Supply.MEDIUM,
     price: 699.99,
   },
   {
@@ -50,6 +57,7 @@ const storeItems = [
     itemPicture: zf4,
     description:
       'The Z Fold 4 is really the first time the biggest Samsung folding smartphone can be recommended to most people, and if you invest in one, it has the power and ability to remain in use for years. Here’s why it’s such a big step forward.',
+    supply: Supply.LOW,
     price: 1799.99,
   },
 ];

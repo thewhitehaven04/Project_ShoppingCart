@@ -6,7 +6,7 @@
 }
 
 .main__dimensions {
-  width: clamp(300px, 60%, 1000px);
+  width: clamp(300px, 60%, 1100px);
   margin: 0 auto;
   padding: 0px;
 }

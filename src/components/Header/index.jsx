@@ -8,7 +8,7 @@ import Breadcrumbs from 'components/Breadcrumbs';
 export default function AppHeader() {
   return (
     <>
-      <header className="header__flex">
+      <header className="header__flex header__sticky">
         <nav className="header_navigation">
           <button type="button">
             <Link to="/">Home</Link>
@@ -19,7 +19,7 @@ export default function AppHeader() {
         </nav>
         <HeaderCartStatus />
       </header>
-      <Breadcrumbs/>
+      <Breadcrumbs />
       <Outlet />
     </>
   );

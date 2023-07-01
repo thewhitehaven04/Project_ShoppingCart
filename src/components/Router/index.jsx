@@ -2,6 +2,7 @@ import AppHeader from 'components/Header';
 import StoreItemExpanded from 'components/StoreItemExpanded';
 import CartPage from 'pages/Cart';
 import HomePage from 'pages/Home';
+import ItemPage from 'pages/Item';
 import StorePage from 'pages/Store';
 import React from 'react';
 import {
@@ -22,7 +23,7 @@ const router = createBrowserRouter(
         />
         <Route
           path=":id"
-          element={<StoreItemExpanded />}
+          element={<ItemPage />}
           handle={{ crumb: (data) => data.name }}
           loader={({ params }) => localStorageWrapper('items').get(params.id)}
         />
