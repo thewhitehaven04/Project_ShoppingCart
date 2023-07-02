@@ -17,7 +17,7 @@ export default function ItemControls(props) {
     if (!isItemInCart) {
       dispatch({
         type: cartActionTypes.addToCart,
-        data: props,
+        data: { ...props, quantity: 1 },
       });
     }
   };
@@ -25,13 +25,13 @@ export default function ItemControls(props) {
   const handleAddToCart = () =>
     dispatch({
       type: cartActionTypes.addToCart,
-      data: props,
+      data: { ...props, quantity: 1 },
     });
 
   const handleRemoveFromCart = () =>
     dispatch({
       type: cartActionTypes.removeFromCart,
-      data: props,
+      data: { ...props, quantity: 1 },
     });
 
   return (

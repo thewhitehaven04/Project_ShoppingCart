@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 150px 1fr 150px;
   grid-template-areas:
-    'image title price'
-    'image . controls';
+    'image title quantity price'
+    'image . . controls';
 
   column-gap: 20px;
 }
@@ -14,11 +14,18 @@
 
 .cart-item__title {
   grid-area: title;
+  font-size: 14pt;
 }
 
 .cart-item__price {
   grid-area: price;
   justify-self: end;
+
+  font-size: 14pt;
+}
+
+.cartt-item__quantity {
+  grid-area: quantity;
 }
 
 .cart-item__controls {
