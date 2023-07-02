@@ -11,6 +11,7 @@ import { cartActionTypes } from 'reducers/cartReducer';
 import style from './../../styles/cartItem.css';
 import React from 'react';
 import { formatPrice } from 'utils/formatPrice';
+import { Link } from 'react-router-dom';
 
 /** @param {CartItemProps} props */
 export default function CartItem(props) {
@@ -21,7 +22,13 @@ export default function CartItem(props) {
 
   return (
     <div className="cart-item__grid">
-      <img className="cart-item__image" src={props.itemPicture} width="150px" />
+      <Link to={'/store/' + props.id}>
+        <img
+          className="cart-item__image"
+          src={props.itemPicture}
+          width="150px"
+        />
+      </Link>
       <span className="cart-item__title">{props.name}</span>
       <span className="cart-item__price">{formatPrice(props.price)}</span>
       <div className="cart-item__controls">

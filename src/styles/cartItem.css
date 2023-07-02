@@ -5,7 +5,7 @@
     'image title price'
     'image . controls';
 
-  column-gap: 10px;
+  column-gap: 20px;
 }
 
 .cart-item__image {

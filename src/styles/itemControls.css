@@ -7,3 +7,9 @@
 .controls__flex button {
   width: 100%;
 }
+
+.controls__button {
+  appearance: none;
+
+  padding: 10px 5px;
+}

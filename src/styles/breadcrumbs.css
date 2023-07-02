@@ -3,11 +3,18 @@
   flex-flow: row nowrap;
   justify-content: flex-start;
 
-  gap: 10px;
-  
+  gap: 20px;
   list-style-type: none;
+}
+
+.crumb {
+  padding-right: 10px;
 }
 
 .crumb__inactive {
   text-decoration: underline;
+  /** icon setup */
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
 }

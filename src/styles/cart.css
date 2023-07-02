@@ -1,7 +1,7 @@
 .cart-items__collection {
   display: flex;
   flex-flow: column nowrap;
-  row-gap: 5px;
+  row-gap: 15px;
 
   list-style-type: none;
   padding: 0px;

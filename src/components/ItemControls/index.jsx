@@ -13,11 +13,14 @@ export default function ItemControls(props) {
 
   const isItemInCart = cartItems.find((cartItem) => cartItem.id === props.id);
 
-  const handlePurchase = () =>
-    dispatch({
-      type: cartActionTypes.addToCart,
-      data: props,
-    });
+  const handlePurchase = () => {
+    if (!isItemInCart) {
+      dispatch({
+        type: cartActionTypes.addToCart,
+        data: props,
+      });
+    }
+  };
 
   const handleAddToCart = () =>
     dispatch({
@@ -34,11 +37,11 @@ export default function ItemControls(props) {
   return (
     <div className="controls__flex">
       {isItemInCart ? (
-        <button type="button" onClick={handleRemoveFromCart}>
+        <button type="button" className="" onClick={handleRemoveFromCart}>
           Remove from cart
         </button>
       ) : (
-        <button type="button" onClick={handleAddToCart}>
+        <button type="button" className="" onClick={handleAddToCart}>
           Add to cart
         </button>
       )}

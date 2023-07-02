@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, useMatches } from 'react-router-dom';
 import style from './../../styles/breadcrumbs.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 export default function Breadcrumbs() {
   const matches = useMatches();
@@ -14,11 +16,16 @@ export default function Breadcrumbs() {
           <li key={index}>
             <NavLink
               to={match.pathname}
-              className={({ isActive }) => (isActive ? '' : 'crumb__inactive')}
+              className={({ isActive }) =>
+                isActive ? 'crumb' : 'crumb crumb__inactive'
+              }
               end
             >
               {match.handle.crumb(match.data)}
             </NavLink>
+            {index + 1 < matchesWithCrumbs.length && (
+              <FontAwesomeIcon icon={faChevronRight} />
+            )}
           </li>
         ))}
       </ul>
