@@ -6,6 +6,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
+/** @type {Map<String, React.Component>} */
 export const routeToCrumbMap = new Map()
   .set(
     '/home',

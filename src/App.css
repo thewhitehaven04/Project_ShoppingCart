@@ -5,6 +5,9 @@
 
   font-family: 'Inter';
   font-size: 14px;
+  
+  --purple: rgb(71, 25, 107);
+  --gray: rgb(240, 240, 240);
 }
 
 *,
@@ -21,4 +24,5 @@ a {
 
 body {
   margin: 0;
+  background-color: var(--gray);
 }

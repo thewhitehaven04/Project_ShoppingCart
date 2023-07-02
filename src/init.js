@@ -1,10 +1,8 @@
-import ps5 from './resources/images/sony-playstation-ps5-konzola-2.png';
-import xsx from './resources/images/25647-xbox-series-x-1tb-konzola-cena-prodaja-2.jpg';
+import ps5 from './resources/images/ps5.png';
+import xsx from './resources/images/xsx.png';
 import ip14 from './resources/images/iphone14pro.png';
 import op11 from './resources/images/op11.png';
 import zf4 from './resources/images/zfold4.png';
-import op11featured from './resources/images/promo/OnePlus-11_review_1-2.webp';
-import zf4featured from './resources/images/promo/2_053_ecosystyem_galaxy_zfold4_beige_spen_zflip4_pinkgold_HI_copy.jpg';
 
 import localStorageWrapper from 'service/localStorage';
 import { Supply } from 'components/StoreItem/types';

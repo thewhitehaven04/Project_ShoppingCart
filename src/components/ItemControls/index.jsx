@@ -37,19 +37,27 @@ export default function ItemControls(props) {
   return (
     <div className="controls__flex">
       {isItemInCart ? (
-        <button type="button" className="" onClick={handleRemoveFromCart}>
+        <button
+          type="button"
+          className="controls-button controls-button__added_to_cart"
+          onClick={handleRemoveFromCart}
+        >
           Remove from cart
         </button>
       ) : (
-        <button type="button" className="" onClick={handleAddToCart}>
+        <button
+          type="button"
+          className="controls-button"
+          onClick={handleAddToCart}
+        >
           Add to cart
         </button>
       )}
-      <button>
-        <Link onClick={handlePurchase} to="/cart">
+      <Link onClick={handlePurchase} to="/cart">
+        <button className="controls-button" type="button">
           Purchase
-        </Link>
-      </button>
+        </button>
+      </Link>
     </div>
   );
 }

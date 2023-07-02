@@ -6,8 +6,12 @@
     'item_picture description controls'
     'item_picture description controls'
     'item_picture description .';
-
+  padding: 15px 25px;
   gap: 10px;
+
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 1px 4px 1px rgb(210, 210, 210); 
 }
 
 .store_item {
@@ -26,6 +30,7 @@
 .store-item__price {
   grid-area: item_price;
   justify-self: flex-end;
+  font-size: 14pt;
 }
 
 .store-item__image {

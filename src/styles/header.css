@@ -1,18 +1,16 @@
 .header__flex {
-
-  --gray: rgba(243, 243, 243, 0.931);
+  --shadow-gray: rgb(210, 210, 210);
 
   display: flex;
   flex-flow: row nowrap;
-
   justify-content: space-between;
   gap: 10px;
 
-  background-color: var(--gray); 
+  background-color: white; 
   padding: 15px 10px;
 
-  box-shadow: 0px 3px 24px 3px white; 
-  backdrop-filter: blur(4px);
+  box-shadow: 0px 1px 4px 1px var(--shadow-gray); 
+  backdrop-filter: blur(10px);
 }
 
 .header__sticky {
@@ -21,7 +19,6 @@
 }
 
 .header-button {
-  --purple: rgb(71, 25, 107);
   appearance: none;
 
   color: var(--purple);
@@ -42,6 +39,5 @@
 .header_navigation {
   display: flex;
   flex-flow: row nowrap; 
-
   gap: 10px;
 }

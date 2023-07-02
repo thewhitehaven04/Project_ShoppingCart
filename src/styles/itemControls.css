@@ -4,12 +4,23 @@
   gap: 5px;
 }
 
-.controls__flex button {
+.controls-button {
   width: 100%;
-}
-
-.controls__button {
   appearance: none;
 
-  padding: 10px 5px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid var(--purple);
+  background-color: white;
+
+  cursor: pointer;
+}
+
+.controls-button__added_to_cart {
+  background-color: var(--purple);
+  color: white;
+}
+
+.controls-button:hover {
+  filter: contrast(1.2);
 }

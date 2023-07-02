@@ -25,7 +25,9 @@ export default function StoreItemExpanded() {
       </div>
       <span className="item-expanded_name">{item.name}</span>
       <p className="item-expanded_description">{item.description}</p>
-      <span className="item-expanded_supply">Item availability: {item.supply}</span>
+      <span className="item-expanded_supply">
+        Item availability: {item.supply}
+      </span>
       <ItemControls {...item} />
     </section>
   );
