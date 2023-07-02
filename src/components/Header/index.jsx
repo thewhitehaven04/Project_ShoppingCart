@@ -3,6 +3,8 @@ import style from './../../styles/header.css';
 import { Outlet, Link, useMatches } from 'react-router-dom';
 import HeaderCartStatus from 'components/HeaderCartStatus';
 import Breadcrumbs from 'components/Breadcrumbs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
 
 /**
  * @param {React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>} props
@@ -27,6 +29,7 @@ export default function AppHeader() {
     <>
       <header className="header__flex header__sticky">
         <nav className="header_navigation">
+          <FontAwesomeIcon icon={faMicrochip} className="header-logo" />
           <HeaderButton type="button">
             <Link to="/">Home</Link>
           </HeaderButton>
