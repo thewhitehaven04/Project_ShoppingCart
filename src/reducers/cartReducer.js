@@ -32,16 +32,17 @@ export const cartActionTypes = {
 export default function cartReducer(state, action) {
   const { id } = action.data;
 
-  if (action.type === cartActionTypes.removeFromCart) {
-    state = state.filter((item) => item.id !== id);
-  } else if (action.type === cartActionTypes.addToCart) {
+  if (action.type === cartActionTypes.removeFromCart) return [...state.filter((item) => item.id !== id)];
+  
+  if (action.type === cartActionTypes.addToCart) {
     if (state.find((item) => item.id === id)) {
       const oldIndex = state.findIndex((item) => item.id === id);
       state[oldIndex] = action.data;
-    } else state = [...state, action.data];
-  }
+      return [...state];
+    }
 
-  return state;
+    return [...state, action.data];
+  }
 }
 
 /**

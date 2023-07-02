@@ -46,6 +46,11 @@ const router = createBrowserRouter(
         element={<HomePage />}
         loader={() => localStorageWrapper('featuredItems').getAll()}
       />
+      <Route
+        path="checkout"
+        element={<div>Under construction</div>}
+        handle={{ crumb: () => routeToCrumbMap.get('/checkout') }}
+      />
     </Route>,
   ),
 );

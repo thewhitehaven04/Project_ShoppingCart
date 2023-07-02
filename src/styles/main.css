@@ -8,7 +8,7 @@
 }
 
 .main__dimensions {
-  width: clamp(300px, 60%, 1100px);
+  width: clamp(300px, 80%, 1000px);
   margin: 0 auto;
   padding: 0px;
 }

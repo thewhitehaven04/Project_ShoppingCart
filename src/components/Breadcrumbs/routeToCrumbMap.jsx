@@ -1,5 +1,6 @@
 import {
   faCartShopping,
+  faCreditCardAlt,
   faHouse,
   faShop,
 } from '@fortawesome/free-solid-svg-icons';
@@ -27,5 +28,12 @@ export const routeToCrumbMap = new Map()
     <>
       <FontAwesomeIcon icon={faCartShopping} />
       <span className="crumb_text">Cart</span>
+    </>,
+  )
+  .set(
+    '/checkout',
+    <>
+      <FontAwesomeIcon icon={faCreditCardAlt} />
+      <span className="crumb_text">Checkout</span>
     </>,
   );
