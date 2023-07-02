@@ -13,8 +13,9 @@
 
 .crumb__inactive {
   text-decoration: underline;
-  /** icon setup */
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
+  color: rgb(71, 25, 107);
+}
+
+.crumb_text {
+  padding-left: 10px;
 }

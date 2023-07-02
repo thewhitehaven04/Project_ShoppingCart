@@ -1,3 +1,4 @@
+import { routeToCrumbMap } from 'components/Breadcrumbs/routeToCrumbMap';
 import AppHeader from 'components/Header';
 import StoreItemExpanded from 'components/StoreItemExpanded';
 import CartPage from 'pages/Cart';
@@ -14,8 +15,15 @@ import localStorageWrapper from 'service/localStorage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<AppHeader />} handle={{ crumb: () => 'Home' }}>
-      <Route path="store" handle={{ crumb: () => 'Store' }}>
+    <Route
+      path="/"
+      element={<AppHeader />}
+      handle={{ crumb: () => routeToCrumbMap.get('/home') }}
+    >
+      <Route
+        path="store"
+        handle={{ crumb: () => routeToCrumbMap.get('/store') }}
+      >
         <Route
           index
           element={<StorePage />}
@@ -24,14 +32,14 @@ const router = createBrowserRouter(
         <Route
           path=":id"
           element={<ItemPage />}
-          handle={{ crumb: (data) => data.name }}
+          handle={{ crumb: (data) => <span>{data.name}</span> }}
           loader={({ params }) => localStorageWrapper('items').get(params.id)}
         />
       </Route>
       <Route
         path="cart"
         element={<CartPage />}
-        handle={{ crumb: () => 'Shopping Cart' }}
+        handle={{ crumb: () => routeToCrumbMap.get('/cart') }}
       />
       <Route
         index

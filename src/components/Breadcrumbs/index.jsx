@@ -13,7 +13,7 @@ export default function Breadcrumbs() {
     <nav>
       <ul className="crumbs__flex">
         {matchesWithCrumbs.map((match, index) => (
-          <li key={index}>
+          <li key={index} className='crumb-container'>
             <NavLink
               to={match.pathname}
               className={({ isActive }) =>
