@@ -2,8 +2,22 @@
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
-  align-items: center;
 
   gap: 10px;
   list-style-type: none;
+
+  padding: 0px;
+}
+
+.featured-items__flex > li {
+  width: 100%;
+}
+
+.featured-item {
+  width: min-content;
+  margin: 0 auto;
+}
+
+.featured-item__background-switch {
+  background-color: white;
 }
