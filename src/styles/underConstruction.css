@@ -1,0 +1,11 @@
+.font-capital {
+  text-transform: capitalize;
+}
+
+.font-large {
+  font-size: 36pt;
+}
+
+.font-warning-sign {
+  font-size: 72pt
+}

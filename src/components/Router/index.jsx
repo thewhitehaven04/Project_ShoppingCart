@@ -5,6 +5,7 @@ import CartPage from 'pages/Cart';
 import HomePage from 'pages/Home';
 import ItemPage from 'pages/Item';
 import StorePage from 'pages/Store';
+import UnderConstruction from 'pages/UnderConstruction';
 import React from 'react';
 import {
   Route,
@@ -48,7 +49,7 @@ const router = createBrowserRouter(
       />
       <Route
         path="checkout"
-        element={<div>Under construction</div>}
+        element={<UnderConstruction />}
         handle={{ crumb: () => routeToCrumbMap.get('/checkout') }}
       />
     </Route>,
