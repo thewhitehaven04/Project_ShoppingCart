@@ -30,8 +30,8 @@ export default function Cart() {
         ))}
       </ul>
       <div className="cart-items_footer">
-        <div>Item quantity: {totalQuantity}</div>
-        <div>Total: {formatPrice(totalSum)}</div>
+        <div data-testid="quantity">Item quantity: {totalQuantity}</div>
+        <div data-testid="total">Total: {formatPrice(totalSum)}</div>
         <Link to="/checkout">
           <button className="controls-button" type="button">
             Checkout

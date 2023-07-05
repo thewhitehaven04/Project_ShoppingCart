@@ -1,8 +1,13 @@
-import { ShoppingCartDispatchContext } from 'providers/Cart';
+import {
+  ShoppingCartDispatchContext,
+} from 'providers/Cart';
 import CartItem from '..';
 import ip14 from './../../../resources/images/iphone14pro.png';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import React from 'react';
+import { cartActionTypes } from 'reducers/cartReducer';
+import { MemoryRouter } from 'react-router-dom';
 
 const dispatchMock = jest.fn(() => {
   console.log('lol');
@@ -13,30 +18,44 @@ const dummyItem = {
   name: 'iPhone 14 Pro',
   price: 652.25,
   itemPicture: ip14,
+  quantity: 2,
 };
 
 test('Cart item attributes are displayed', () => {
   render(
-    <ShoppingCartDispatchContext.Provider value={dispatchMock}>
-      <CartItem {...dummyItem}></CartItem>
-    </ShoppingCartDispatchContext.Provider>,
+    <MemoryRouter>
+      <ShoppingCartDispatchContext.Provider value={dispatchMock}>
+        <CartItem {...dummyItem} />
+      </ShoppingCartDispatchContext.Provider>
+    </MemoryRouter>,
   );
 
   expect(screen.findAllByText(dummyItem.name)).toBeTruthy();
   expect(screen.findAllByText(dummyItem.price)).toBeTruthy();
+  expect(screen.findAllByRole('textbox', { value: 2 }));
 });
 
-test('Cart item remove button hides the component', async () => {
+test('Cart item remove calls the reducer dispatch function', async () => {
+  const dispatchMock = jest.fn(() => []);
+
   render(
-    <div className="container">
-      <CartItem {...dummyItem}></CartItem>
-    </div>,
+    <MemoryRouter>
+      <ShoppingCartDispatchContext.Provider value={dispatchMock}>
+        <CartItem {...dummyItem} />
+      </ShoppingCartDispatchContext.Provider>
+    </MemoryRouter>,
   );
 
-  act(() => {
+  await act(async () => {
     const user = userEvent.setup();
-    user.click(screen.findByRole('button', { textContent: 'Remove' }));
+    await user.click(
+      await screen.findByRole('button', { name: 'Remove item from cart' }),
+    );
   });
 
-  expect(screen.queryAllByAltText('listitem')).toHaveLength(0);
+  expect(dispatchMock).toHaveBeenCalledTimes(1);
+  expect(dispatchMock).toHaveBeenCalledWith({
+    type: cartActionTypes.removeFromCart,
+    data: { id: dummyItem.id },
+  });
 });

@@ -50,6 +50,7 @@ export default function CartItem(props) {
       <div className="cart-item__controls">
         <button className="cart-item-controls__remove" onClick={removeFromCart}>
           <FontAwesomeIcon icon={faTrashCan} />
+          <span>Remove item from cart</span>
         </button>
       </div>
     </div>

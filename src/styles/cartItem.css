@@ -1,7 +1,7 @@
 .cart-item__grid {
   display: grid;
-  grid-template-columns: min-content 1fr max-content; 
-  grid-template-rows: min-content; 
+  grid-template-columns: min-content 1fr max-content;
+  grid-template-rows: min-content;
   grid-auto-rows: 1fr;
   grid-template-areas:
     'image title price'
@@ -15,7 +15,6 @@
   border-radius: 5px;
   background-color: white;
   box-shadow: 0px 1px 4px 1px rgb(210, 210, 210);
-
 }
 
 .cart-item__image {
@@ -46,7 +45,7 @@
 
 .cart-item__controls {
   grid-area: controls;
-  place-self: end; 
+  place-self: end;
 }
 
 .cart-item-controls__remove {
@@ -58,6 +57,10 @@
   color: var(--purple);
   font-weight: bold;
   font-size: 18pt;
+}
+
+.cart-item-controls__remove > span {
+  display: none;
 }
 
 .cart-item-controls__remove:hover {
