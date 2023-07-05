@@ -1,5 +1,5 @@
 import { routeToCrumbMap } from 'components/Breadcrumbs/routeToCrumbMap';
-import AppHeader from 'components/Header';
+import AppWrapper from 'components/Header';
 import StoreItemExpanded from 'components/StoreItemExpanded';
 import CartPage from 'pages/Cart';
 import HomePage from 'pages/Home';
@@ -18,7 +18,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       path="/"
-      element={<AppHeader />}
+      element={<AppWrapper />}
       handle={{ crumb: () => routeToCrumbMap.get('/home') }}
     >
       <Route

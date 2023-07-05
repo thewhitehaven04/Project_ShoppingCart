@@ -5,6 +5,7 @@ import HeaderCartStatus from 'components/HeaderCartStatus';
 import Breadcrumbs from 'components/Breadcrumbs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
+import Footer from 'components/Footer';
 
 /**
  * @param {React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>} props
@@ -20,7 +21,7 @@ export function HeaderButton({ children }, props) {
   );
 }
 
-export default function AppHeader() {
+export default function AppWrapper() {
   const inStore = useMatches().find((match) =>
     match.pathname.includes('store'),
   );
@@ -43,6 +44,7 @@ export default function AppHeader() {
       </header>
       <Breadcrumbs />
       <Outlet />
+      <Footer />
     </>
   );
 }
