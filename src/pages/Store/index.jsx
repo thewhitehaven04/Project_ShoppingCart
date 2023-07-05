@@ -8,7 +8,7 @@ export default function StorePage() {
 
   return (
     <Main>
-      <Store items={data} />;
+      <Store items={data} />
     </Main>
   );
 }

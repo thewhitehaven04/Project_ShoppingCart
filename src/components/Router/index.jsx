@@ -1,6 +1,5 @@
 import { routeToCrumbMap } from 'components/Breadcrumbs/routeToCrumbMap';
 import AppWrapper from 'components/Header';
-import StoreItemExpanded from 'components/StoreItemExpanded';
 import CartPage from 'pages/Cart';
 import HomePage from 'pages/Home';
 import ItemPage from 'pages/Item';
