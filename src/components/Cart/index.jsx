@@ -1,6 +1,6 @@
 import CartItem from 'components/CartItem';
 import { useShoppingCart } from 'providers/Cart';
-import React, { useEffect } from 'react';
+import React from 'react';
 import style from './../../styles/cart.css';
 import { formatPrice } from 'utils/formatPrice';
 import EmptyCartMessage from 'components/EmptyCartMessage';
