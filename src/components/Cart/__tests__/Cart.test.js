@@ -95,16 +95,16 @@ it('Total quantity is updated after changes to counters', async () => {
 
 it('Total price is updated after changes to counters', async () => {
   render(<CartContextWrapper items={[items]} />);
-  const element = screen.queryAllByLabelText('Quantity:')[1];
 
   await act(async () => {
     const user = userEvent.setup();
+    const element = screen.getByLabelText('Quantity:');
     await user.clear(element);
-    await user.type(element, '15');
+    await user.type(element, '4');
   });
 
   expect(screen.getByTestId('total')).toHaveTextContent(
-    `Total: $${125 * 3 + 150 * 15}.00`,
+    `Total: $${125 * 3 + 150 * 4}.00`,
   );
 });
 
@@ -117,7 +117,7 @@ it('Total price is updated after removing an item', async () => {
     );
   });
 
-  expect(screen.getByTestId('total')).toHaveTextContent(
+  expect(await screen.findByTestId('total')).toHaveTextContent(
     `Total: $${150 * 2}.00`,
   );
 });
