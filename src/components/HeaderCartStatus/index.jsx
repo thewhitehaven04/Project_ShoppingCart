@@ -12,8 +12,8 @@ export default function HeaderCartStatus() {
   }, 0);
 
   return (
-    <HeaderButton type="button">
-      <Link to="/cart">{totalCount} items</Link>
-    </HeaderButton>
+    <Link to="/cart">
+      <HeaderButton type="button">{totalCount} items</HeaderButton>
+    </Link>
   );
 }

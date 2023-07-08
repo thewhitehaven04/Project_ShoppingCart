@@ -27,13 +27,13 @@ export default function Header() {
     <header className="header__flex header__sticky">
       <nav className="header_navigation">
         <FontAwesomeIcon icon={faMicrochip} className="header-logo" />
-        <HeaderButton type="button">
-          <Link to="/">Home</Link>
-        </HeaderButton>
+        <Link to="/">
+          <HeaderButton type="button">Home</HeaderButton>
+        </Link>
         {!inStore && (
-          <HeaderButton type="button">
-            <Link to="/store">Store</Link>
-          </HeaderButton>
+          <Link to="/store">
+            <HeaderButton type="button">Store</HeaderButton>
+          </Link>
         )}
       </nav>
       <HeaderCartStatus />
