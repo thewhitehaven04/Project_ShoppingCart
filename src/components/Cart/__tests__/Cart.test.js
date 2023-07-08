@@ -1,4 +1,4 @@
-import { act, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { default as React, useReducer } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import Cart from '..';

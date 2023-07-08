@@ -1,13 +1,19 @@
-import {
-  ShoppingCartDispatchContext,
-} from 'providers/Cart';
+import { ShoppingCartDispatchContext } from 'providers/Cart';
 import CartItem from '..';
 import ip14 from './../../../resources/images/iphone14pro.png';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { cartActionTypes } from 'reducers/cartReducer';
-import { MemoryRouter } from 'react-router-dom';
+import {
+  MemoryRouter,
+  Route,
+  RouterProvider,
+  createMemoryRouter,
+  createRoutesFromElements,
+} from 'react-router-dom';
+import '@testing-library/jest-dom/extend-expect';
+import { formatPrice } from 'utils/formatPrice';
 
 const dispatchMock = jest.fn(() => {
   console.log('lol');
@@ -30,9 +36,9 @@ test('Cart item attributes are displayed', () => {
     </MemoryRouter>,
   );
 
-  expect(screen.findAllByText(dummyItem.name)).toBeTruthy();
-  expect(screen.findAllByText(dummyItem.price)).toBeTruthy();
-  expect(screen.findAllByRole('textbox', { value: 2 }));
+  expect(screen.getByText(dummyItem.name)).toBeInTheDocument();
+  expect(screen.getByText(formatPrice(dummyItem.price))).toBeInTheDocument();
+  expect(screen.getByRole('spinbutton', { value: '2' })).toBeInTheDocument();
 });
 
 test('Cart item remove calls the reducer dispatch function', async () => {
@@ -49,7 +55,7 @@ test('Cart item remove calls the reducer dispatch function', async () => {
   await act(async () => {
     const user = userEvent.setup();
     await user.click(
-      await screen.findByRole('button', { name: 'Remove item from cart' }),
+      screen.getByRole('button', { name: 'Remove item from cart' }),
     );
   });
 
@@ -58,4 +64,29 @@ test('Cart item remove calls the reducer dispatch function', async () => {
     type: cartActionTypes.removeFromCart,
     data: { id: dummyItem.id },
   });
+});
+
+test('Cart image redirect', async () => {
+  const router = createMemoryRouter(
+    createRoutesFromElements(
+      <>
+        <Route path="/store/:id" element={dummyItem.id} />
+        <Route path="/cart" element={<CartItem {...dummyItem} />} />
+      </>,
+    ),
+    { initialEntries: ['/cart'], initialIndex: 1 },
+  );
+
+  render(
+    <ShoppingCartDispatchContext.Provider value={dispatchMock}>
+      <RouterProvider router={router} />
+    </ShoppingCartDispatchContext.Provider>,
+  );
+
+  await act(async () => {
+    const user = userEvent.setup();
+    await user.click(screen.getByRole('img'));
+  });
+
+  expect(screen.getByRole('generic')).toHaveTextContent(dummyItem.id);
 });
