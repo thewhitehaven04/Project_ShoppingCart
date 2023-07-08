@@ -19,17 +19,44 @@ jest.mock('./../../../components/StoreItem/index.jsx', () =>
 
 describe('Displaying item list in store', () => {
   test('Zero items displayed', () => {
-    const { container } = render(<Store />);
+    const { container } = render(<Store items={[]} />);
     expect(container.childNodes[0].hasChildNodes()).toBeFalsy();
   });
 
   test('1 item displayed', () => {
-    render(<Store />);
+    /**
+     * @type import('components/StoreItem').StoreItemProps
+     */
+    const item = {
+      id: '123',
+      name: 'test',
+      description: 'description',
+      itemPicture: 'hm',
+      price: 225.16,
+    };
+    render(<Store items={[item]} />);
     expect(screen.getAllByRole('listitem')).toHaveLength(1);
   });
 
   test('Multiple items displayed', () => {
-    render(<Store />);
+    const items = [
+      {
+        id: '123',
+        name: 'test',
+        description: 'description',
+        itemPicture: 'hm',
+        price: 225.16,
+      },
+      {
+        id: '234',
+        name: 'test2',
+        description: 'description2',
+        itemPicture: 'hm2',
+        price: 225.18,
+      },
+    ];
+
+    render(<Store items={items} />);
     expect(screen.getAllByRole('listitem')).toHaveLength(2);
   });
 });

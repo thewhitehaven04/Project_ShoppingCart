@@ -1,4 +1,4 @@
-import { act, render, screen } from '@testing-library/react';
+import { act, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import { default as React, useReducer } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import Cart from '..';
@@ -94,17 +94,17 @@ it('Total quantity is updated after changes to counters', async () => {
 });
 
 it('Total price is updated after changes to counters', async () => {
-  render(<CartContextWrapper items={[items]} />);
+  render(<CartContextWrapper items={items} />);
 
   await act(async () => {
     const user = userEvent.setup();
-    const element = screen.getByLabelText('Quantity:');
+    const element = screen.queryAllByLabelText('Quantity:')[0];
     await user.clear(element);
-    await user.type(element, '4');
+    await user.type(element, '10');
   });
 
   expect(screen.getByTestId('total')).toHaveTextContent(
-    `Total: $${125 * 3 + 150 * 4}.00`,
+    `Total: $${125 * 10 + 150 * 2}.00`,
   );
 });
 

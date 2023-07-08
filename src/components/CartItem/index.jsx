@@ -41,8 +41,8 @@ export default function CartItem(props) {
         Quantity:
         <input
           id="quantity"
-          type="number"
           min={1}
+          type='number'
           onChange={handleQuantityChange}
           value={props.quantity}
         />
