@@ -26,3 +26,10 @@ body {
   margin: 0;
   background-color: var(--gray);
 }
+
+.App {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}

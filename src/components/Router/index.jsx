@@ -1,5 +1,5 @@
 import { routeToCrumbMap } from 'components/Breadcrumbs/routeToCrumbMap';
-import AppWrapper from 'components/Header';
+import AppWrapper from 'components/AppWrapper';
 import CartPage from 'pages/Cart';
 import HomePage from 'pages/Home';
 import ItemPage from 'pages/Item';
@@ -8,12 +8,12 @@ import UnderConstruction from 'pages/UnderConstruction';
 import React from 'react';
 import {
   Route,
-  createBrowserRouter,
+  createHashRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
 import localStorageWrapper from 'service/localStorage';
 
-const router = createBrowserRouter(
+const router = createHashRouter(
   createRoutesFromElements(
     <Route
       path="/"

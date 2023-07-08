@@ -11,7 +11,6 @@ const op11ID = crypto.randomUUID().toString();
 const zf4ID = crypto.randomUUID().toString();
 
 /** @type import('components/StoreItemExpanded').ItemExpandedData[] */
-
 const storeItems = [
   {
     id: crypto.randomUUID().toString(),
