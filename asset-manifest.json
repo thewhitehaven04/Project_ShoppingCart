@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Project_ShoppingCart/static/css/main.de597097.css",
-    "main.js": "/Project_ShoppingCart/static/js/main.1133033b.js",
+    "main.css": "/Project_ShoppingCart/static/css/main.9c63645c.css",
+    "main.js": "/Project_ShoppingCart/static/js/main.abab4450.js",
     "static/media/xsx.png": "/Project_ShoppingCart/static/media/xsx.011be9a0beeab892db19.png",
     "static/media/op11.png": "/Project_ShoppingCart/static/media/op11.bf26778a69a123c9638c.png",
     "static/media/iphone14pro.png": "/Project_ShoppingCart/static/media/iphone14pro.a250660178462cb12f89.png",
     "static/media/zfold4.png": "/Project_ShoppingCart/static/media/zfold4.fdb0484f3d1638823d53.png",
     "static/media/ps5.png": "/Project_ShoppingCart/static/media/ps5.376d13e503d2de5550dc.png",
     "index.html": "/Project_ShoppingCart/index.html",
-    "main.de597097.css.map": "/Project_ShoppingCart/static/css/main.de597097.css.map",
-    "main.1133033b.js.map": "/Project_ShoppingCart/static/js/main.1133033b.js.map"
+    "main.9c63645c.css.map": "/Project_ShoppingCart/static/css/main.9c63645c.css.map",
+    "main.abab4450.js.map": "/Project_ShoppingCart/static/js/main.abab4450.js.map"
   },
   "entrypoints": [
-    "static/css/main.de597097.css",
-    "static/js/main.1133033b.js"
+    "static/css/main.9c63645c.css",
+    "static/js/main.abab4450.js"
   ]
 }
