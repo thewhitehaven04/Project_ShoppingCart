@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './../../styles/store.css';
-import StoreItem from 'components/StoreItem';
+import StoreItem from './../StoreItem/index.jsx';
 
 /**
  * @typedef {Object} StoreProps

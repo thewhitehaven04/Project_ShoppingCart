@@ -1,7 +1,7 @@
 import React from 'react';
-import Main from '../../components/Main/index';
-import Store from 'components/Store';
 import { useLoaderData } from 'react-router-dom';
+import Main from '../../components/Main';
+import Store from '../../components/Store';
 
 export default function StorePage() {
   const data = useLoaderData();

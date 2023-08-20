@@ -1,7 +1,7 @@
-import { HeaderButton } from 'components/Header';
-import { useShoppingCart } from 'providers/Cart';
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useShoppingCart } from "../../providers/Cart";
+import { HeaderButton } from "../Header";
 
 export default function HeaderCartStatus() {
   const cartItems = useShoppingCart();

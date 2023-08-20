@@ -1,6 +1,6 @@
-import Cart from 'components/Cart';
 import React from 'react';
-import Main from 'components/Main';
+import Main from '../../components/Main';
+import Cart from '../../providers/Cart';
 
 export default function CartPage() {
   return (

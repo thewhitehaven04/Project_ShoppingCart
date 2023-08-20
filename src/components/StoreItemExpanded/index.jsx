@@ -8,12 +8,12 @@
  * @prop {String=} description
  */
 
-import ItemControls from 'components/ItemControls';
-import { Supply } from 'components/StoreItem/types';
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import ItemControls from '../ItemControls';
+import { Supply } from '../StoreItem/types';
 import style from './../../styles/itemExpanded.css';
-import { formatPrice } from 'utils/formatPrice';
+import { formatPrice } from '../../utils/formatPrice';
 
 export default function StoreItemExpanded() {
   /** @type ItemExpandedData */

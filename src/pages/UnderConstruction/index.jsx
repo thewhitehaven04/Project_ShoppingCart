@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Main from 'components/Main';
-import React from 'react';
-import style from './../../styles/underConstruction.css';
-import { faHammer } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import Main from "../../components/Main";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHammer } from "@fortawesome/free-solid-svg-icons";
 
 export default function UnderConstruction() {
   return (

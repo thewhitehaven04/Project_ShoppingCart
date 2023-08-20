@@ -1,19 +1,19 @@
-import { routeToCrumbMap } from 'components/Breadcrumbs/routeToCrumbMap';
-import AppWrapper from 'components/AppWrapper';
-import CartPage from 'pages/Cart';
-import HomePage from 'pages/Home';
-import ItemPage from 'pages/Item';
-import StorePage from 'pages/Store';
-import UnderConstruction from 'pages/UnderConstruction';
 import React from 'react';
 import {
   Route,
-  createHashRouter,
+  createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import localStorageWrapper from 'service/localStorage';
+import { routeToCrumbMap } from '../Breadcrumbs/routeToCrumbMap';
+import CartPage from '../../pages/Cart';
+import HomePage from '../../pages/Home';
+import ItemPage from '../../pages/Item';
+import StorePage from '../../pages/Store';
+import UnderConstruction from '../../pages/UnderConstruction';
+import AppWrapper from '../AppWrapper';
+import localStorageWrapper from '../../service/localStorage';
 
-const router = createHashRouter(
+const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       path="/"

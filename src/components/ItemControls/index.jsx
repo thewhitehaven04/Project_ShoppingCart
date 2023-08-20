@@ -1,7 +1,7 @@
-import { useShoppingCart, useShoppingCartDispatch } from 'providers/Cart';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { cartActionTypes } from 'reducers/cartReducer';
+import { useShoppingCartDispatch, useShoppingCart } from '../../providers/Cart';
+import { cartActionTypes } from '../../reducers/cartReducer';
 import style from './../../styles/itemControls.css';
 
 /**

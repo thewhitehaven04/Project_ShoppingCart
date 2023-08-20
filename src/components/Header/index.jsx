@@ -1,8 +1,8 @@
-import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import HeaderCartStatus from 'components/HeaderCartStatus';
-import React from 'react';
-import { Link, useMatches } from 'react-router-dom';
+import { faMicrochip } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
+import { useMatches, Link } from "react-router-dom";
+import HeaderCartStatus from "../HeaderCartStatus";
 
 /**
  * @param {React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>} props

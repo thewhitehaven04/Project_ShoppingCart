@@ -4,5 +4,8 @@
     "checkJs": true,
     "baseUrl": "./src"
   },
+  "paths": {
+    "@images/*": ["./src/resources/images"]
+  },
   "updateImportsOnFileMove": "prompt"
 }

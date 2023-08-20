@@ -1,11 +1,11 @@
-import ps5 from './resources/images/ps5.png';
-import xsx from './resources/images/xsx.png';
-import ip14 from './resources/images/iphone14pro.png';
-import op11 from './resources/images/op11.png';
-import zf4 from './resources/images/zfold4.png';
+import ps5 from '@images/ps5.png';
+import xsx from '@images/xsx.png';
+import ip14 from '@images/iphone14pro.png';
+import op11 from '@images/op11.png';
+import zf4 from '@images/zfold4.png';
 
-import localStorageWrapper from 'service/localStorage';
-import { Supply } from 'components/StoreItem/types';
+import localStorageWrapper from './service/localStorage';
+import { Supply } from './components/StoreItem/types';
 
 const op11ID = crypto.randomUUID().toString();
 const zf4ID = crypto.randomUUID().toString();
