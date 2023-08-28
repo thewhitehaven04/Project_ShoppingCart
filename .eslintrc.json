@@ -4,7 +4,12 @@
     "es2021": true,
     "jest/globals": true
   },
-  "extends": ["plugin:react/recommended", "xo", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "xo",
+    "prettier"
+  ],
   "overrides": [],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -13,7 +18,14 @@
   "plugins": ["react", "jest"],
   "rules": {
     "react/prop-types": "off",
-    "react/self-closing-comp": 1,
+    "react/self-closing-comp": "on",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
     "no-unused-vars": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

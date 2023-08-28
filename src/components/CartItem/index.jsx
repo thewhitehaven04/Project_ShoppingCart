@@ -7,14 +7,14 @@
  * @prop {Number} quantity
  */
 
-import { useShoppingCartDispatch } from 'providers/Cart';
-import { cartActionTypes } from 'reducers/cartReducer';
-import style from './../../styles/cartItem.css';
-import React from 'react';
-import { formatPrice } from 'utils/formatPrice';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { useShoppingCartDispatch } from '../../providers/Cart';
+import { cartActionTypes } from '../../reducers/cartReducer';
+import React from 'react';
+import { formatPrice } from '../../utils/formatPrice';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import style from './../../styles/cartItem.css';
 
 /** @param {CartItemProps} props */
 export default function CartItem(props) {

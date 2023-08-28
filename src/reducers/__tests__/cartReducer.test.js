@@ -1,4 +1,5 @@
 import cartReducer, { cartActionTypes } from '../cartReducer';
+import { expect, it, describe } from 'vitest';
 
 describe('Cart reducer', () => {
   const singleItem = {
@@ -19,7 +20,6 @@ describe('Cart reducer', () => {
 
   it('Add a single item to the cart', () => {
     /** @type import('../cartReducer').CartContextItem */
-
     expect(
       cartReducer([], { type: cartActionTypes.addToCart, data: singleItem }),
     ).toContainEqual(singleItem);
@@ -57,5 +57,4 @@ describe('Cart reducer', () => {
     expect(state).toHaveLength(1);
     expect(state[0]).toHaveProperty('quantity', 1);
   });
-
 });

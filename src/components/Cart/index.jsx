@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useShoppingCart } from '../../providers/Cart';
-import { formatPrice } from '../../utils/formatPrice';
-import CartItem from '../CartItem';
 import EmptyCartMessage from '../EmptyCartMessage';
+import CartItem from '../CartItem';
+import { Link } from 'react-router-dom';
+import { formatPrice } from '../../utils/formatPrice';
+import { useShoppingCart } from '../../providers/Cart';
 import style from './../../styles/cart.css';
 
 export default function Cart() {

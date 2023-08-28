@@ -2,10 +2,12 @@
   "compilerOptions": {
     "jsx": "react",
     "checkJs": true,
-    "baseUrl": "./src"
-  },
-  "paths": {
-    "@images/*": ["./src/resources/images"]
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["/src/*"],
+      "@images": ["/src/resources/images/"],
+      "@components": ["/src/components/"]
+    }
   },
   "updateImportsOnFileMove": "prompt"
 }

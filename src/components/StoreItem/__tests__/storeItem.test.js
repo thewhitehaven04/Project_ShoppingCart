@@ -1,18 +1,17 @@
-import { act, render, screen } from '@testing-library/react';
-import StoreItem from '..';
-import React  from 'react';
 import img from './../../../resources/images/test_img.png';
-import CartProvider from 'providers/Cart';
 import {
   Route,
   RouterProvider,
   createMemoryRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
 import { formatPrice } from 'utils/formatPrice';
-import '@testing-library/jest-dom';
-
+import { expect, test, describe } from 'vitest';
+import StoreItem from '..';
+import userEvent from '@testing-library/user-event';
+import React from 'react';
+import CartProvider from '../../../providers/Cart';
+import { act, render, screen } from '@testing-library/react';
 
 const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi, tempora corrupti harum cum dolore magnam quae, repudiandae deserunt voluptas exercitationem praesentium adipisci ex! Esse voluptatibus perferendis accusantium unde eligendi!';
