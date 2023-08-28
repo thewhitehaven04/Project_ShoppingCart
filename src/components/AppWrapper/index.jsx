@@ -1,9 +1,9 @@
 import React from 'react';
-import style from './../../styles/header.css';
+import style from '@styles/header.css';
 import { Outlet } from 'react-router-dom';
-import Header from '../Header';
-import Breadcrumbs from '../Breadcrumbs';
-import Footer from '../Footer';
+import Header from '@components/Header';
+import Breadcrumbs from '@components/Breadcrumbs';
+import Footer from '@components/Footer';
 
 export default function AppWrapper() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useMatches } from 'react-router-dom';
-import style from './../../styles/breadcrumbs.css';
+import style from '@styles/breadcrumbs.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 

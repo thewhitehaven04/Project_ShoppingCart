@@ -1,10 +1,10 @@
 import React from 'react';
-import EmptyCartMessage from '../EmptyCartMessage';
-import CartItem from '../CartItem';
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../../utils/formatPrice';
 import { useShoppingCart } from '../../providers/Cart';
 import style from './../../styles/cart.css';
+import EmptyCartMessage from '@components/EmptyCartMessage';
+import CartItem from '@components/CartItem';
 
 export default function Cart() {
   const cartItems = useShoppingCart();

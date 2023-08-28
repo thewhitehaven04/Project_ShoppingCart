@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './../../styles/featuredItem.css';
+import style from '@styles/featuredItem.css';
 import { Link } from 'react-router-dom';
 
 /**

@@ -5,13 +5,13 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import { routeToCrumbMap } from '../Breadcrumbs/routeToCrumbMap';
-import CartPage from '../../pages/Cart';
-import HomePage from '../../pages/Home';
-import ItemPage from '../../pages/Item';
-import StorePage from '../../pages/Store';
-import UnderConstruction from '../../pages/UnderConstruction';
-import AppWrapper from '../AppWrapper';
-import localStorageWrapper from '../../service/localStorage';
+import AppWrapper from '@components/AppWrapper';
+import CartPage from '@pages/Cart';
+import HomePage from '@pages/Home';
+import ItemPage from '@pages/Item';
+import StorePage from '@pages/Store';
+import UnderConstruction from '@pages/UnderConstruction';
+import localStorageWrapper from '@/service/localStorage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

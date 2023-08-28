@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './../../styles/store.css';
+import style from '@styles/store.css';
 import StoreItem from './../StoreItem/index.jsx';
 
 /**

@@ -1,8 +1,9 @@
+import HeaderCartStatus from "@components/HeaderCartStatus";
 import { faMicrochip } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useMatches, Link } from "react-router-dom";
-import HeaderCartStatus from "../HeaderCartStatus";
+import style from '@styles/header.css';
 
 /**
  * @param {React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>} props

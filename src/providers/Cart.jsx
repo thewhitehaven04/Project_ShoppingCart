@@ -1,5 +1,5 @@
+import cartReducer from '@reducers/cartReducer';
 import { createContext, useContext, useReducer } from 'react';
-import cartReducer from '../reducers/cartReducer';
 import React from 'react';
 
 /** @type React.Context<function(import('../reducers/cartReducer').CartAction): void> */

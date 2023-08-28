@@ -1,8 +1,8 @@
+import router from '@components/Router';
 import './App.css';
 import React from 'react';
-import router from './components/Router';
 import { RouterProvider } from 'react-router-dom';
-import CartProvider from './providers/Cart';
+import CartProvider from '@providers/Cart';
 
 const App = () => (
   <div className="App">

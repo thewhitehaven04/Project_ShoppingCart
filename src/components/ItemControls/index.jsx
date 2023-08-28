@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useShoppingCartDispatch, useShoppingCart } from '../../providers/Cart';
-import { cartActionTypes } from '../../reducers/cartReducer';
-import style from './../../styles/itemControls.css';
+import style from '@styles/itemControls.css';
+import { cartActionTypes } from '@reducers/cartReducer';
+import { useShoppingCartDispatch, useShoppingCart } from '@providers/Cart';
 
 /**
- * @param {import("components/StoreItem").StoreItemProps} props
+ * @param {import('@components/StoreItem').StoreItemProps} props
  */
 export default function ItemControls(props) {
   const dispatch = useShoppingCartDispatch();

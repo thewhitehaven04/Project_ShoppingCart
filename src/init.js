@@ -10,7 +10,7 @@ import { Supply } from './components/StoreItem/types';
 const op11ID = crypto.randomUUID().toString();
 const zf4ID = crypto.randomUUID().toString();
 
-/** @type import('components/StoreItemExpanded').ItemExpandedData[] */
+/** @type import('@components/StoreItemExpanded').ItemExpandedData[] */
 const storeItems = [
   {
     id: crypto.randomUUID().toString(),

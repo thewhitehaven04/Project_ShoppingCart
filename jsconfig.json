@@ -2,11 +2,15 @@
   "compilerOptions": {
     "jsx": "react",
     "checkJs": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "@/*": ["/src/*"],
-      "@images": ["/src/resources/images/"],
-      "@components": ["/src/components/"]
+      "@images/*": ["src/resources/images/*"],
+      "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@reducers/*": ["src/reducers/*"],
+      "@pages/*": ["src/pages/*"],
+      "@providers/*": ["src/providers/*"],
+      "@/*": ["src/*"]
     }
   },
   "updateImportsOnFileMove": "prompt"

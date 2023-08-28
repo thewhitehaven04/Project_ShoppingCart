@@ -15,7 +15,7 @@ export default defineConfig(() => ({
     alias: [
       {
         find: '@',
-        replacement: path.resolve(__dirname, '/src')
+        replacement: path.resolve(__dirname, '/src'),
       },
       {
         find: '@images',
@@ -24,6 +24,22 @@ export default defineConfig(() => ({
       {
         find: '@components',
         replacement: path.resolve(__dirname, '/src/components'),
+      },
+      {
+        find: '@styles',
+        replacement: path.resolve(__dirname, '/src/styles'),
+      },
+      {
+        find: '@reducers',
+        replacement: path.resolve(__dirname, '/src/reducers'),
+      },
+      {
+        find: '@pages',
+        replacement: path.resolve(__dirname, '/src/pages'),
+      },
+      {
+        find: '@providers',
+        replacement: path.resolve(__dirname, '/src/providers'),
       },
     ],
   },
