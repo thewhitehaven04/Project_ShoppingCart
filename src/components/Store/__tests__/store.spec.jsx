@@ -3,9 +3,9 @@ import { render, screen } from '@testing-library/react';
 import xsx from './../../../resources/images/25647-xbox-series-x-1tb-konzola-cena-prodaja-2.jpg';
 import ps5 from './../../../resources/images/sony-playstation-ps5-konzola-2.png';
 import Store from '..';
-import { __esModule } from '@testing-library/jest-dom/dist/matchers';
+import { vi } from 'vitest';
 
-jest.mock('./../../../components/StoreItem/index.jsx', () =>
+vi.mock('./../../../components/StoreItem/index.jsx', () =>
   // eslint-disable-next-line react/display-name
   ({ name, description, itemPicture, price }) => (
     <div>
@@ -25,7 +25,7 @@ describe('Displaying item list in store', () => {
 
   test('1 item displayed', () => {
     /**
-     * @type import('components/StoreItem').StoreItemProps
+     * @type import('../../StoreItem').StoreItemProps
      */
     const item = {
       id: '123',

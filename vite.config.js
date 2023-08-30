@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -41,11 +42,16 @@ export default defineConfig(() => ({
         find: '@providers',
         replacement: path.resolve(__dirname, '/src/providers'),
       },
+      {
+        find: '@utils',
+        replacement: path.resolve(__dirname, '/src/utils'),
+      },
     ],
   },
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: 'src/tests/setup.js',
+    include: ['**/*.spec.jsx', '**/*.test.jsx'],
+    setupFiles: ['/src/testSetup.js'],
   },
 }));

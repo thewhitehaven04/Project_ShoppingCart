@@ -1,16 +1,13 @@
 import { act, render, screen } from '@testing-library/react';
 import { default as React, useReducer } from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import Cart from '..';
-import {
-  ShoppingCartContext,
-  ShoppingCartDispatchContext,
-} from 'providers/Cart';
 import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
-import ps5 from './../../../resources/images/ps5.png';
-import xsx from './../../../resources/images/xsx.png';
-import cartReducer from 'reducers/cartReducer';
+import ps5 from '@images/ps5.png';
+import xsx from '@images/xsx.png';
+import cartReducer from '@reducers/cartReducer';
+import Cart, { ShoppingCartContext, ShoppingCartDispatchContext } from '@providers/Cart';
+import { it, expect } from 'vitest';
 
 const items = [
   {
@@ -43,7 +40,7 @@ const CartContextWrapper = ({ items }) => {
 };
 
 it('Correct item quantity is displayed ', () => {
-  /** @type import('components/CartItem').CartItemProps[] */
+  /** @type import('@components/CartItem').CartItemProps[] */
   render(
     <MemoryRouter>
       <ShoppingCartContext.Provider value={items}>
@@ -56,7 +53,7 @@ it('Correct item quantity is displayed ', () => {
 });
 
 it('Correct total price is displayed', () => {
-  /** @type import('components/CartItem').CartItemProps[] */
+  /** @type import('@components/CartItem').CartItemProps[] */
   render(
     <MemoryRouter>
       <ShoppingCartContext.Provider value={items}>

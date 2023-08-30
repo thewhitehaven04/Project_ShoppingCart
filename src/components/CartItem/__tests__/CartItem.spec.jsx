@@ -1,10 +1,8 @@
-import { ShoppingCartDispatchContext } from 'providers/Cart';
 import CartItem from '..';
-import ip14 from './../../../resources/images/iphone14pro.png';
+import ip14 from '@images/iphone14pro.png';
 import { act, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { cartActionTypes } from 'reducers/cartReducer';
 import {
   MemoryRouter,
   Route,
@@ -13,9 +11,12 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
-import { formatPrice } from 'utils/formatPrice';
+import { expect, vi } from 'vitest';
+import { formatPrice } from '@/utils/formatPrice';
+import { cartActionTypes } from '@reducers/cartReducer';
+import { ShoppingCartDispatchContext } from '@providers/Cart';
 
-const dispatchMock = jest.fn(() => {
+const dispatchMock = vi.fn(() => {
   console.log('lol');
 });
 
@@ -42,7 +43,7 @@ test('Cart item attributes are displayed', () => {
 });
 
 test('Cart item remove calls the reducer dispatch function', async () => {
-  const dispatchMock = jest.fn(() => []);
+  const dispatchMock = vi.fn(() => []);
 
   render(
     <MemoryRouter>

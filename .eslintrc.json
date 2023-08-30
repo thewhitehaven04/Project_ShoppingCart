@@ -8,9 +8,20 @@
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "xo",
-    "prettier"
+    "prettier",
+    "plugin:vitest-globals/recommended"
   ],
-  "overrides": [],
+  "globals": {
+    "vi": true
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/*.{j,t}s?(x)", "**/*.spec.{j,t}s?(x)"],
+      "env": {
+        "vitest-globals/env": true
+      }
+    }
+  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"

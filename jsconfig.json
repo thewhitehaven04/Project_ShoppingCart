@@ -3,6 +3,7 @@
     "jsx": "react",
     "checkJs": true,
     "baseUrl": "./",
+    "types": ["vitest/globals"],
     "paths": {
       "@images/*": ["src/resources/images/*"],
       "@components/*": ["src/components/*"],
