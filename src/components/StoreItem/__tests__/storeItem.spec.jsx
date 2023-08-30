@@ -11,7 +11,6 @@ import React from 'react';
 import CartProvider from '../../../providers/Cart';
 import { act, render, screen } from '@testing-library/react';
 import { formatPrice } from '@/utils/formatPrice';
-import { expect, it, describe } from 'vitest';
 
 const lorem =
   'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, commodi, tempora corrupti harum cum dolore magnam quae, repudiandae deserunt voluptas exercitationem praesentium adipisci ex! Esse voluptatibus perferendis accusantium unde eligendi!';

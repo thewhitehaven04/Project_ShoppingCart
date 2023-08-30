@@ -1,3 +1,4 @@
+import Breadcrumbs from '@components/Breadcrumbs';
 import { render, screen } from '@testing-library/react';
 import { default as React } from 'react';
 import {
@@ -6,9 +7,8 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import Breadcrumbs from '..';
 
-it('One-level deep breadcrumbs', () => {
+test('One-level deep breadcrumbs', () => {
   const router = createMemoryRouter(
     createRoutesFromElements(
       <Route path="/" element={<Breadcrumbs />}>
@@ -29,7 +29,7 @@ it('One-level deep breadcrumbs', () => {
   expect(screen.getByRole('link').textContent).toEqual('Home');
 });
 
-it('Multi-level deep breadcrumbs', () => {
+test('Multi-level deep breadcrumbs', () => {
   const router = createMemoryRouter(
     createRoutesFromElements(
       <Route path="/" element={<Breadcrumbs />}>
@@ -57,7 +57,7 @@ it('Multi-level deep breadcrumbs', () => {
   expect(elements).toHaveLength(2);
 });
 
-it('No breadcrumbs', () => {
+test('No breadcrumbs', () => {
   const router = createMemoryRouter(
     createRoutesFromElements(
       <Route path="/" element={<Breadcrumbs />}>

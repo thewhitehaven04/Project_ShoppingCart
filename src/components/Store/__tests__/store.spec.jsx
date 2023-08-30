@@ -1,21 +1,21 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import xsx from './../../../resources/images/25647-xbox-series-x-1tb-konzola-cena-prodaja-2.jpg';
 import ps5 from './../../../resources/images/sony-playstation-ps5-konzola-2.png';
 import Store from '..';
-import { vi } from 'vitest';
+import StoreItem from '@components/StoreItem/index.jsx';
 
-vi.mock('./../../../components/StoreItem/index.jsx', () =>
-  // eslint-disable-next-line react/display-name
-  ({ name, description, itemPicture, price }) => (
-    <div>
-      <span>{name}</span>
-      <span>{description}</span>
-      <span>{itemPicture}</span>
-      <span>{price}</span>
-    </div>
-  ),
-);
+vi.mock('@components/StoreItem/index.jsx', () => {
+  return {
+    default: ({ name, description, itemPicture, price }) => (
+      <div>
+        <span>{name}</span>
+        <span>{description}</span>
+        <span>{itemPicture}</span>
+        <span>{price}</span>
+      </div>
+    ),
+  };
+});
 
 describe('Displaying item list in store', () => {
   test('Zero items displayed', () => {

@@ -1,20 +1,13 @@
-import CartItem from '..';
-import ip14 from '@images/iphone14pro.png';
-import { act, render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import React from 'react';
-import {
-  MemoryRouter,
-  Route,
-  RouterProvider,
-  createMemoryRouter,
-  createRoutesFromElements,
-} from 'react-router-dom';
-import '@testing-library/jest-dom/extend-expect';
-import { expect, vi } from 'vitest';
 import { formatPrice } from '@/utils/formatPrice';
-import { cartActionTypes } from '@reducers/cartReducer';
+import CartItem from '@components/CartItem';
+import ip14 from '@images/iphone14pro.png';
 import { ShoppingCartDispatchContext } from '@providers/Cart';
+import { cartActionTypes } from '@reducers/cartReducer';
+import { render } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { act } from 'react-dom/test-utils';
+import { MemoryRouter, createMemoryRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 
 const dispatchMock = vi.fn(() => {
   console.log('lol');

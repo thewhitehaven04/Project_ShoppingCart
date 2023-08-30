@@ -1,6 +1,5 @@
 import router from '@components/Router';
 import './App.css';
-import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import CartProvider from '@providers/Cart';
 

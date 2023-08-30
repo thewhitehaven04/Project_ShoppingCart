@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../../utils/formatPrice';
 import style from './../../styles/storeItem.css';
+import ItemControls from '@components/ItemControls';
 
 /**
  * @typedef {Object} StoreItemProps

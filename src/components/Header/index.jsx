@@ -1,7 +1,6 @@
 import HeaderCartStatus from "@components/HeaderCartStatus";
 import { faMicrochip } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
 import { useMatches, Link } from "react-router-dom";
 import style from '@styles/header.css';
 

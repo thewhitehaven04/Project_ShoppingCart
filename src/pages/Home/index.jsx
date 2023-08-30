@@ -1,4 +1,3 @@
-import React from "react";
 import { useLoaderData } from "react-router-dom";
 import style from '@styles/home.css';
 import FeaturedItem from "@components/FeaturedItem";

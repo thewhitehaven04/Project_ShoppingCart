@@ -1,6 +1,5 @@
 import Main from '@components/Main';
 import Store from '@components/Store';
-import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 export default function StorePage() {

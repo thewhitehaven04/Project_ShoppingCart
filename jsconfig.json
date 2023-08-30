@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "checkJs": true,
     "baseUrl": "./",
-    "types": ["vitest/globals"],
+    "types": ["vitest/globals", "react"],
     "paths": {
       "@images/*": ["src/resources/images/*"],
       "@components/*": ["src/components/*"],

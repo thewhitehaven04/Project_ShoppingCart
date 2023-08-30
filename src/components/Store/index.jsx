@@ -1,10 +1,9 @@
-import React from 'react';
 import style from '@styles/store.css';
-import StoreItem from './../StoreItem/index.jsx';
+import StoreItem from '@components/StoreItem/index.jsx';
 
 /**
  * @typedef {Object} StoreProps
- * @property {import("./../StoreItem/index.jsx").StoreItemProps[]} items
+ * @property {import('@components/StoreItem/index.jsx').StoreItemProps[]} items
  */
 
 /**

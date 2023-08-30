@@ -1,13 +1,15 @@
 import { act, render, screen } from '@testing-library/react';
-import { default as React, useReducer } from 'react';
+import { useReducer } from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import '@testing-library/jest-dom/extend-expect';
 import userEvent from '@testing-library/user-event';
 import ps5 from '@images/ps5.png';
 import xsx from '@images/xsx.png';
 import cartReducer from '@reducers/cartReducer';
-import Cart, { ShoppingCartContext, ShoppingCartDispatchContext } from '@providers/Cart';
-import { it, expect } from 'vitest';
+import {
+  ShoppingCartContext,
+  ShoppingCartDispatchContext,
+} from '@providers/Cart';
+import Cart from '@pages/Cart';
 
 const items = [
   {
@@ -39,7 +41,7 @@ const CartContextWrapper = ({ items }) => {
   );
 };
 
-it('Correct item quantity is displayed ', () => {
+test('Correct item quantity is displayed ', () => {
   /** @type import('@components/CartItem').CartItemProps[] */
   render(
     <MemoryRouter>
@@ -52,7 +54,7 @@ it('Correct item quantity is displayed ', () => {
   expect(screen.getByTestId('quantity')).toHaveTextContent('Item quantity: 5');
 });
 
-it('Correct total price is displayed', () => {
+test('Correct total price is displayed', () => {
   /** @type import('@components/CartItem').CartItemProps[] */
   render(
     <MemoryRouter>
@@ -65,7 +67,7 @@ it('Correct total price is displayed', () => {
   expect(screen.getByTestId('total')).toHaveTextContent('675');
 });
 
-it('Total quantity is updated after removing an item', async () => {
+test('Total quantity is updated after removing an item', async () => {
   render(<CartContextWrapper items={items} />);
 
   await act(async () => {
@@ -77,7 +79,7 @@ it('Total quantity is updated after removing an item', async () => {
   expect(screen.getByTestId('quantity')).toHaveTextContent('Item quantity: 2');
 });
 
-it('Total quantity is updated after changes to counters', async () => {
+test('Total quantity is updated after changes to counters', async () => {
   render(<CartContextWrapper items={items} />);
   const element = screen.queryAllByLabelText('Quantity:')[0];
 
@@ -90,7 +92,7 @@ it('Total quantity is updated after changes to counters', async () => {
   expect(screen.getByTestId('quantity')).toHaveTextContent('Item quantity: 12');
 });
 
-it('Total price is updated after changes to counters', async () => {
+test('Total price is updated after changes to counters', async () => {
   render(<CartContextWrapper items={items} />);
 
   await act(async () => {
@@ -105,7 +107,7 @@ it('Total price is updated after changes to counters', async () => {
   );
 });
 
-it('Total price is updated after removing an item', async () => {
+test('Total price is updated after removing an item', async () => {
   render(<CartContextWrapper items={items} />);
   await act(async () => {
     const user = userEvent.setup();

@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useShoppingCartDispatch } from '../../providers/Cart';
 import { cartActionTypes } from '../../reducers/cartReducer';
-import React from 'react';
 import { formatPrice } from '../../utils/formatPrice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import style from './../../styles/cartItem.css';

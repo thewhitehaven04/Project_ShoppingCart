@@ -8,7 +8,6 @@
  * @prop {String=} description
  */
 
-import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ItemControls from '../ItemControls';
 import { Supply } from '../StoreItem/types';
