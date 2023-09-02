@@ -4,6 +4,7 @@ import { useShoppingCart } from '../../providers/Cart';
 import style from './../../styles/cart.css';
 import EmptyCartMessage from '@components/EmptyCartMessage';
 import CartItem from '@components/CartItem';
+import { TextButton } from '@components/TextButton';
 
 export default function Cart() {
   const cartItems = useShoppingCart();
@@ -32,9 +33,7 @@ export default function Cart() {
         <div data-testid="quantity">Item quantity: {totalQuantity}</div>
         <div data-testid="total">Total: {formatPrice(totalSum)}</div>
         <Link to="/checkout">
-          <button className="controls-button" type="button">
-            Checkout
-          </button>
+          <TextButton type="button">Checkout</TextButton>
         </Link>
       </div>
     </div>

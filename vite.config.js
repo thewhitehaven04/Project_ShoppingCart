@@ -46,6 +46,10 @@ export default defineConfig(() => ({
         find: '@utils',
         replacement: path.resolve(__dirname, '/src/utils'),
       },
+      {
+        find: '@styles',
+        replacement: path.resolve(__dirname, '/src/styles')
+      }
     ],
   },
   test: {

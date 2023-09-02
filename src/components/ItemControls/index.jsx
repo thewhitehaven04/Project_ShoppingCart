@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import style from '@styles/itemControls.css';
 import { cartActionTypes } from '@reducers/cartReducer';
 import { useShoppingCartDispatch, useShoppingCart } from '@providers/Cart';
+import { TextButton } from '@components/TextButton';
 
 /**
  * @param {import('@components/StoreItem').StoreItemProps} props
@@ -36,26 +37,16 @@ export default function ItemControls(props) {
   return (
     <div className="controls__flex">
       {isItemInCart ? (
-        <button
-          type="button"
-          className="controls-button controls-button__added_to_cart"
-          onClick={handleRemoveFromCart}
-        >
+        <TextButton type="button" onClick={handleRemoveFromCart}>
           Remove from cart
-        </button>
+        </TextButton>
       ) : (
-        <button
-          type="button"
-          className="controls-button"
-          onClick={handleAddToCart}
-        >
+        <TextButton type="button" onClick={handleAddToCart}>
           Add to cart
-        </button>
+        </TextButton>
       )}
       <Link onClick={handlePurchase} to="/cart">
-        <button className="controls-button" type="button">
-          Purchase
-        </button>
+        <TextButton type="button">Purchase</TextButton>
       </Link>
     </div>
   );

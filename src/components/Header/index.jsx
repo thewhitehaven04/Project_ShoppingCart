@@ -1,22 +1,9 @@
-import HeaderCartStatus from "@components/HeaderCartStatus";
-import { faMicrochip } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useMatches, Link } from "react-router-dom";
+import HeaderCartStatus from '@components/HeaderCartStatus';
+import { faMicrochip } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useMatches, Link } from 'react-router-dom';
 import style from '@styles/header.css';
-
-/**
- * @param {React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>} props
- */
-export function HeaderButton({ children }, props) {
-  return (
-    <button
-      {...props}
-      className={'header-button' + (props.className ? props.className : '')}
-    >
-      {children}
-    </button>
-  );
-}
+import { TextButton } from '@components/TextButton';
 
 export default function Header() {
   const inStore = useMatches().find((match) =>
@@ -28,11 +15,11 @@ export default function Header() {
       <nav className="header_navigation">
         <FontAwesomeIcon icon={faMicrochip} className="header-logo" />
         <Link to="/">
-          <HeaderButton type="button">Home</HeaderButton>
+          <TextButton type="button">Home</TextButton>
         </Link>
         {!inStore && (
           <Link to="/store">
-            <HeaderButton type="button">Store</HeaderButton>
+            <TextButton type="button">Store</TextButton>
           </Link>
         )}
       </nav>

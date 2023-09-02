@@ -1,6 +1,6 @@
-import { HeaderButton } from "@components/Header";
-import { useShoppingCart } from "@providers/Cart";
-import { Link } from "react-router-dom";
+import { TextButton } from '@components/TextButton';
+import { useShoppingCart } from '@providers/Cart';
+import { Link } from 'react-router-dom';
 
 export default function HeaderCartStatus() {
   const cartItems = useShoppingCart();
@@ -12,7 +12,7 @@ export default function HeaderCartStatus() {
 
   return (
     <Link to="/cart">
-      <HeaderButton type="button">{totalCount} items</HeaderButton>
+      <TextButton type="button">{totalCount} items</TextButton>
     </Link>
   );
 }

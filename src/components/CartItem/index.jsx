@@ -13,7 +13,7 @@ import { useShoppingCartDispatch } from '../../providers/Cart';
 import { cartActionTypes } from '../../reducers/cartReducer';
 import { formatPrice } from '../../utils/formatPrice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import style from './../../styles/cartItem.css';
+import style from '@styles/cartItem.css';
 
 /** @param {CartItemProps} props */
 export default function CartItem(props) {
