@@ -1,5 +1,6 @@
 import style from '@styles/store.css';
 import StoreItem from '@components/StoreItem/index.jsx';
+import { CardWrapper } from '@components/CardWrapper';
 
 /**
  * @typedef {Object} StoreProps
@@ -15,7 +16,9 @@ export default function Store(props) {
       <ul className="store-items__collection">
         {props.items.map((storeItemProps) => (
           <li className="store-items__item" key={storeItemProps.id}>
-            <StoreItem {...storeItemProps} />
+            <CardWrapper>
+              <StoreItem {...storeItemProps} />
+            </CardWrapper>
           </li>
         ))}
       </ul>

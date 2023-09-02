@@ -5,6 +5,7 @@ import style from './../../styles/cart.css';
 import EmptyCartMessage from '@components/EmptyCartMessage';
 import CartItem from '@components/CartItem';
 import { TextButton } from '@components/TextButton';
+import { CardWrapper } from '@components/CardWrapper';
 
 export default function Cart() {
   const cartItems = useShoppingCart();
@@ -25,7 +26,9 @@ export default function Cart() {
       <ul className="cart-items__collection">
         {cartItems.map((cartItem, index) => (
           <li key={index}>
-            <CartItem {...cartItem} />
+            <CardWrapper>
+              <CartItem {...cartItem} />
+            </CardWrapper>
           </li>
         ))}
       </ul>
