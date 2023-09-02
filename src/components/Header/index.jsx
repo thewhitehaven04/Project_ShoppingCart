@@ -4,6 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useMatches, Link } from 'react-router-dom';
 import style from '@styles/header.css';
 import { TextButton } from '@components/TextButton';
+import FlexWrapper from '@components/FlexWrapper';
+import styled from 'styled-components';
+
+const HeaderNav = styled(FlexWrapper)`
+  align-items: center;
+  position: sticky;
+`;
 
 export default function Header() {
   const inStore = useMatches().find((match) =>
@@ -12,7 +19,7 @@ export default function Header() {
 
   return (
     <header className="header__flex header__sticky">
-      <nav className="header_navigation">
+      <HeaderNav>
         <FontAwesomeIcon icon={faMicrochip} className="header-logo" />
         <Link to="/">
           <TextButton type="button">Home</TextButton>
@@ -22,7 +29,7 @@ export default function Header() {
             <TextButton type="button">Store</TextButton>
           </Link>
         )}
-      </nav>
+      </HeaderNav>
       <HeaderCartStatus />
     </header>
   );

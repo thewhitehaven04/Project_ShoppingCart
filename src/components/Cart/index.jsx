@@ -6,6 +6,7 @@ import EmptyCartMessage from '@components/EmptyCartMessage';
 import CartItem from '@components/CartItem';
 import { TextButton } from '@components/TextButton';
 import { CardWrapper } from '@components/CardWrapper';
+import FlexWrapper from '@components/FlexWrapper';
 
 export default function Cart() {
   const cartItems = useShoppingCart();
@@ -22,7 +23,7 @@ export default function Cart() {
   return cartItems.length === 0 ? (
     <EmptyCartMessage />
   ) : (
-    <div className="cart-align-end">
+    <FlexWrapper $direction="column" $align="end">
       <ul className="cart-items__collection">
         {cartItems.map((cartItem, index) => (
           <li key={index}>
@@ -32,13 +33,13 @@ export default function Cart() {
           </li>
         ))}
       </ul>
-      <div className="cart-items_footer">
+      <FlexWrapper $direction="column" $align="flex-end">
         <div data-testid="quantity">Item quantity: {totalQuantity}</div>
         <div data-testid="total">Total: {formatPrice(totalSum)}</div>
         <Link to="/checkout">
           <TextButton type="button">Checkout</TextButton>
         </Link>
-      </div>
-    </div>
+      </FlexWrapper>
+    </FlexWrapper>
   );
 }

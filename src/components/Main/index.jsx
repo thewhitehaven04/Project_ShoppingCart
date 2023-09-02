@@ -1,5 +1,13 @@
-import style from '@styles/main.css';
+import styled from 'styled-components';
 
-export default function Main({ children }) {
-  return <main className="main__flex main__dimensions">{children}</main>
-}
+export default styled.main`
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  row-gap: 10px;
+  flex-grow: 1;
+  width: clamp(300px, 80%, 1000px);
+  margin: 0 auto;
+  padding: 0px;
+`;

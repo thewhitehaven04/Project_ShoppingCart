@@ -43,11 +43,3 @@
   color: var(--purple);
   padding-right: 25px;
 }
-
-.header_navigation {
-  display: flex;
-  flex-flow: row nowrap; 
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-}
