@@ -1,5 +1,5 @@
 import cartReducer from '@reducers/cartReducer';
-import { createContext, useContext, useReducer } from 'react';
+import { createContext, useContext, useMemo, useReducer } from 'react';
 
 /** @type React.Context<function(import('../reducers/cartReducer').CartAction): void> */
 export const ShoppingCartDispatchContext = createContext(null);
@@ -7,14 +7,16 @@ export const ShoppingCartDispatchContext = createContext(null);
 export const ShoppingCartContext = createContext([]);
 
 /**
- * @param {?any} param0 
- * @returns 
+ * @param {?any} param0
+ * @returns
  */
 export default function CartProvider({ children }) {
   const [items, dispatch] = useReducer(cartReducer, []);
 
+  const itemsMemo = useMemo(() => items, [items]);
+
   return (
-    <ShoppingCartContext.Provider value={items}>
+    <ShoppingCartContext.Provider value={itemsMemo}>
       <ShoppingCartDispatchContext.Provider value={dispatch}>
         {children}
       </ShoppingCartDispatchContext.Provider>
